@@ -55,10 +55,13 @@ Lexiassist-datascience/
 
     README.md
     requirements.txt
-    .gitignore
 ```
 
-The `data/` directory currently contains an Excel-friendly preview. Full CSV datasets are maintained separately because of their larger file sizes.
+The `notebooks/` directory contains all four Jupyter notebooks used throughout Phase 1.
+
+The `data/` directory contains an Excel-friendly preview of the processed dataset.
+
+The three complete CSV datasets are available as downloadable assets in the repository's [GitHub Release](https://github.com/fastcel/Lexiassist-datascience/releases/tag/v1.0-phase1) due to their larger file sizes.
 
 ## 4. Project Workflow
 
@@ -154,9 +157,9 @@ No chunking, embedding generation or retrieval model training is performed in th
 
 These findings describe the sampled dataset rather than the entire Australian legal system.
 
-## 6. Data Files
+## 6. Data Files and Downloads
 
-The project produces the following datasets:
+The project produces four datasets for different stages of analysis and preprocessing.
 
 | File | Description |
 |---|---|
@@ -165,13 +168,35 @@ The project produces the following datasets:
 | `australian_legal_corpus_preprocessed.csv` | Retrieval-ready text and metadata |
 | `australian_legal_corpus_readable.xlsx` | Formatted preview for easy inspection |
 
-**Important:** The Excel workbook is intended for human inspection and contains shortened legal-text previews.
+### Download Full CSV Datasets
 
-The full CSV datasets preserve the complete legal text and should be used for further data processing and retrieval experiments.
+The three complete CSV datasets are hosted as assets in the GitHub Release:
 
-The full CSV files are not currently included in this GitHub repository. They can be generated through the notebooks using the source dataset.
+**[LexiAssist Phase 1 Datasets (v1.0-phase1)](https://github.com/fastcel/Lexiassist-datascience/releases/tag/v1.0-phase1)**
+
+Individual downloads:
+
+1. [Download Original Sample CSV](https://github.com/fastcel/Lexiassist-datascience/releases/download/v1.0-phase1/australian_legal_corpus_sample.csv)
+2. [Download Cleaned Corpus CSV](https://github.com/fastcel/Lexiassist-datascience/releases/download/v1.0-phase1/australian_legal_corpus_cleaned.csv)
+3. [Download Preprocessed Corpus CSV](https://github.com/fastcel/Lexiassist-datascience/releases/download/v1.0-phase1/australian_legal_corpus_preprocessed.csv)
+
+All three CSV files preserve the complete legal text.
+
+The files are provided through GitHub Releases because their sizes exceed the standard GitHub browser upload limit.
+
+### Excel Preview
+
+A formatted Excel version is also available:
+
+[Download Readable Excel Preview](data/australian_legal_corpus_readable.xlsx)
+
+The Excel workbook is intended for human inspection and contains shortened legal-text previews for easier reading.
+
+**Important:** The CSV files contain the complete legal text and should be used for further data processing and retrieval experiments. The Excel preview is not intended to replace the full datasets.
 
 ## 7. Technologies and Libraries
+
+The project uses the following technologies:
 
 - Python
 - Google Colab and Jupyter Notebook
@@ -183,17 +208,42 @@ The full CSV files are not currently included in this GitHub repository. They ca
 - OpenPyXL
 - Git and GitHub
 
+Required Python dependencies are listed in `requirements.txt`.
+
 ## 8. Running the Project
 
-1. Clone or download this repository.
-2. Install the required Python packages:
+### Environment Setup
 
-   `pip install -r requirements.txt`
+Clone or download the repository:
 
-3. Open the notebooks in Google Colab or a compatible Jupyter environment.
-4. Execute them sequentially, starting with Notebook 01.
-5. Upload the dataset exported by the previous notebook whenever prompted.
-6. Inspect the generated outputs, charts and exported files.
+```bash
+git clone https://github.com/fastcel/Lexiassist-datascience.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd Lexiassist-datascience
+```
+
+Install the required Python libraries:
+
+```bash
+pip install -r requirements.txt
+```
+
+### Executing the Notebooks
+
+Open the notebooks in Google Colab and execute them in the following order:
+
+1. `01_data_acquisition_and_initial_audit.ipynb`
+2. `02_data_cleaning.ipynb`
+3. `03_exploratory_data_analysis.ipynb`
+4. `04_text_preprocessing.ipynb`
+
+Notebook 01 acquires and samples the source dataset. Subsequent notebooks use the CSV files exported by previous stages.
+
+Alternatively, the complete datasets can be downloaded directly from the [GitHub Release](https://github.com/fastcel/Lexiassist-datascience/releases/tag/v1.0-phase1) without rerunning data acquisition.
 
 The notebooks use Google Colab file-upload and download utilities. Some adjustments may be required when running outside Colab.
 
@@ -201,9 +251,20 @@ The notebooks use Google Colab file-upload and download utilities. Some adjustme
 
 Phase 1 successfully establishes a reproducible workflow for acquiring, cleaning, analyzing and preparing Australian legal documents.
 
-The resulting dataset preserves legal content and relevant metadata while providing additional attributes for future retrieval experiments.
+The main outcomes include:
 
-The analysis also identifies important coverage limitations and data-quality considerations that will inform subsequent development.
+- Acquisition of a 1,000-document sample.
+- Identification and investigation of data-quality issues.
+- Standardization of text and metadata.
+- Exploratory visualizations and statistical analysis.
+- Identification of corpus imbalances and coverage limitations.
+- Preparation of retrieval-ready text.
+- Preservation of original legal content.
+- Export of the final validated dataset containing 1,000 documents and 16 attributes.
+
+The resulting dataset provides a foundation for future retrieval experiments.
+
+The analysis also identifies data-quality considerations that will inform subsequent development.
 
 ## 10. Future Work: Phase 2
 
