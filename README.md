@@ -40,6 +40,30 @@ After cleaning and preprocessing, the final dataset contains 16 attributes, incl
 
 **Normalization and scaling:** Numerical feature scaling is not required for the current text-preparation workflow. Embedding normalization and other retrieval-specific processing will be considered during Phase 2.
 
+
+### Dataset Source and Sampling
+
+**Dataset:** [Open Australian Legal Corpus](https://huggingface.co/datasets/isaacus/open-australian-legal-corpus)
+
+A reproducible sample of 1,000 Australian legal
+documents was collected using streaming acquisition.
+
+| Property | Value |
+|---|---|
+| Dataset source | Hugging Face |
+| Sample size | 1,000 documents |
+| Random seed | 42 |
+| Shuffle buffer | 20,000 |
+| Original features | 10 |
+| Cleaned features | 14 |
+| Preprocessed features | 16 |
+
+The sample includes court decisions, primary
+legislation, secondary legislation and bills.
+
+The sample does not represent complete coverage
+of Australian law.
+
 ## 3. Repository Structure
 
 ```text
