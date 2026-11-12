@@ -22,23 +22,23 @@ The objectives of Phase 1 are to:
 
 ## 2. Dataset
 
-**Source:** [Open Australian Legal Corpus on Hugging Face](https://huggingface.co/datasets/isaacus/open-australian-legal-corpus)
+### Problem Statement
 
-The dataset contains Australian legal materials, including court decisions, primary legislation, secondary legislation and bills.
+Australian legal documents can be lengthy and difficult to navigate. LexiAssist aims to support legal research by retrieving relevant information from Australian legal sources using a Retrieval-Augmented Generation approach.
 
-For this project, a reproducible sample of **1,000 legal documents** was selected using streaming data acquisition.
+Phase 1 focuses on preparing a clean, structured, and well-understood legal corpus for subsequent retrieval experiments.
 
-| Property | Value |
-|---|---|
-| Dataset | Open Australian Legal Corpus |
-| Sample size | 1,000 documents |
-| Sampling seed | 42 |
-| Shuffle buffer | 20,000 |
-| Original attributes | 10 |
-| Cleaned attributes | 14 |
-| Final preprocessed attributes | 16 |
+### Dataset Features and Target Variable
 
-The sample is intended for educational experimentation and does not represent complete coverage of Australian law.
+The original dataset contains 10 attributes:
+
+`version_id`, `type`, `jurisdiction`, `source`, `mime`, `date`, `citation`, `url`, `when_scraped`, and `text`.
+
+After cleaning and preprocessing, the final dataset contains 16 attributes, including document-length statistics, missing-date indicators, publication year, and retrieval-ready text.
+
+**Target variable:** Not applicable in Phase 1. This project focuses on information retrieval rather than supervised classification or regression. No labeled prediction target is defined at this stage.
+
+**Normalization and scaling:** Numerical feature scaling is not required for the current text-preparation workflow. Embedding normalization and other retrieval-specific processing will be considered during Phase 2.
 
 ## 3. Repository Structure
 
