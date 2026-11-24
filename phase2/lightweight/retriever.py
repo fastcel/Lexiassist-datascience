@@ -16,11 +16,20 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 from scipy.sparse import load_npz
 from rank_bm25 import BM25Okapi
+from pathlib import Path
 
-CHUNKS_PATH    = "chunks.pkl"
-BM25_PATH      = "bm25.pkl"
-TFIDF_PATH     = "tfidf_vectorizer.pkl"
-TFIDF_MAT_PATH = "tfidf_matrix.npz"
+
+ARTIFACTS_DIR = (
+    Path(__file__).resolve().parents[1]
+    / "artifacts"
+    / "lightweight_test_1000"
+)
+
+CHUNKS_PATH = ARTIFACTS_DIR / "chunks.pkl"
+BM25_PATH = ARTIFACTS_DIR / "bm25.pkl"
+TFIDF_PATH = ARTIFACTS_DIR / "tfidf_vectorizer.pkl"
+TFIDF_MAT_PATH = ARTIFACTS_DIR / "tfidf_matrix.npz"
+
 
 DENSE_K       = 20
 SPARSE_K      = 20

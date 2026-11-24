@@ -6,6 +6,7 @@ import os
 import pickle
 import numpy as np
 import faiss
+from pathlib import Path
 
 from sentence_transformers import SentenceTransformer, CrossEncoder
 from rank_bm25 import BM25Okapi
@@ -13,9 +14,17 @@ from rank_bm25 import BM25Okapi
 EMBED_MODEL = "all-MiniLM-L6-v2"
 RERANK_MODEL = "cross-encoder/ms-marco-MiniLM-L-6-v2"
 
-INDEX_PATH = "legal.faiss"
-CHUNKS_PATH = "chunks.pkl"
-BM25_PATH = "bm25.pkl"
+
+ARTIFACTS_DIR = (
+    Path(__file__).resolve().parents[1]
+    / "artifacts"
+    / "pretrained_test_1000"
+)
+
+INDEX_PATH = ARTIFACTS_DIR / "legal.faiss"
+CHUNKS_PATH = ARTIFACTS_DIR / "chunks.pkl"
+BM25_PATH = ARTIFACTS_DIR / "bm25.pkl"
+
 
 DENSE_K = 20
 SPARSE_K = 20
@@ -32,7 +41,7 @@ class Retriever:
         self.embed = SentenceTransformer(EMBED_MODEL)
         self.reranker = CrossEncoder(RERANK_MODEL)
 
-        self.index = faiss.read_index(INDEX_PATH)
+        self.index = faiss.read_index(str(INDEX_PATH))
 
         if not os.path.exists(CHUNKS_PATH):
             raise FileNotFoundError("Run indexer.py first (missing chunks.pkl)")
