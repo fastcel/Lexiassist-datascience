@@ -17,13 +17,9 @@ The caller receives up to n sub-queries to run alongside the original.
 import re
 
 
-# ── Legal synonym map (bidirectional) ─────────────────────────────────────────
-# Keys are plain-English terms; values are legal equivalents.
-# Expansion is applied in both directions so a user typing legalese also
-# gets plain-English sub-queries that may match differently-worded chunks.
-
+#Legal synonym map(bidirectional)
 LEGAL_SYNONYMS: dict[str, list[str]] = {
-    # relationships / family
+    #relationships/family
     "defacto":          ["de facto", "domestic partnership", "cohabitation", "de facto relationship"],
     "de facto":         ["defacto", "domestic partnership", "cohabitation"],
     "divorce":          ["dissolution of marriage", "matrimonial breakdown", "separation"],
@@ -31,7 +27,7 @@ LEGAL_SYNONYMS: dict[str, list[str]] = {
     "custody":          ["parental responsibility", "care arrangements", "child custody orders"],
     "child support":    ["maintenance", "financial support for children", "child maintenance"],
 
-    # property / contract
+    #property/contract
     "landlord":         ["lessor", "property owner", "licensor"],
     "tenant":           ["lessee", "occupant", "renter"],
     "lease":            ["tenancy agreement", "rental agreement", "licence to occupy"],
@@ -42,7 +38,7 @@ LEGAL_SYNONYMS: dict[str, list[str]] = {
     "negligence":       ["duty of care", "tort", "carelessness", "liability"],
     "liable":           ["responsible", "at fault", "negligent", "culpable"],
 
-    # rights / process
+    #rights/process
     "rights":           ["entitlements", "legal rights", "provisions", "protections"],
     "law":              ["legislation", "act", "statute", "regulation", "legal provisions"],
     "court":            ["tribunal", "judicial body", "magistrates court", "federal court"],
@@ -53,32 +49,32 @@ LEGAL_SYNONYMS: dict[str, list[str]] = {
     "terminate":        ["end", "cancel", "rescind", "discharge"],
     "void":             ["invalid", "unenforceable", "null and void"],
 
-    # criminal
+    #criminal
     "crime":            ["offence", "criminal act", "indictable offence"],
     "accused":          ["defendant", "respondent", "charged person"],
     "guilty":           ["convicted", "found liable", "culpable"],
     "sentence":         ["penalty", "punishment", "order", "sanction"],
 
-    # corporate
+    #corporate
     "company":          ["corporation", "body corporate", "incorporated entity"],
     "director":         ["officer", "board member", "company director"],
     "shareholder":      ["member", "equity holder", "stockholder"],
     "insolvency":       ["bankruptcy", "liquidation", "winding up"],
 }
 
-# Build reverse map (legal term → plain English)
+#Build reverse map (legal term → plain English)
 _REVERSE: dict[str, list[str]] = {}
 for plain, legals in LEGAL_SYNONYMS.items():
     for legal in legals:
         _REVERSE.setdefault(legal, []).append(plain)
 
-# Merge both directions into one lookup
+#Merge both directions into one lookup
 _ALL_SYNONYMS: dict[str, list[str]] = {**LEGAL_SYNONYMS}
 for term, plains in _REVERSE.items():
     _ALL_SYNONYMS.setdefault(term, []).extend(plains)
 
 
-# ── Stopwords ─────────────────────────────────────────────────────────────────
+#Stopwords
 
 _STOPWORDS = {
     "a", "an", "the", "is", "are", "was", "were", "be", "been", "being",
@@ -100,7 +96,7 @@ _QUESTION_STARTERS = re.compile(
 )
 
 
-# ── Strategy 1: synonym substitution ─────────────────────────────────────────
+#Strategy 1: synonym substitution
 
 def _synonym_variants(query: str) -> list[str]:
     """Replace each recognised term with its first synonym to form a new query."""
@@ -110,13 +106,12 @@ def _synonym_variants(query: str) -> list[str]:
     for i, word in enumerate(words):
         clean = word.strip("?.,;:'\"")
         if clean in _ALL_SYNONYMS:
-            for synonym in _ALL_SYNONYMS[clean][:2]:   # at most 2 replacements per term
+            for synonym in _ALL_SYNONYMS[clean][:2]:   
                 new_words = words[:i] + [synonym] + words[i + 1:]
                 variant = " ".join(new_words).strip("?. ")
                 if variant.lower() != query.lower():
                     variants.append(variant)
 
-    # also try two-word phrases
     for i in range(len(words) - 1):
         phrase = f"{words[i].strip('?.,;:')} {words[i+1].strip('?.,;:')}"
         if phrase in _ALL_SYNONYMS:
@@ -129,35 +124,26 @@ def _synonym_variants(query: str) -> list[str]:
     return variants
 
 
-# ── Strategy 2: keyword extraction ───────────────────────────────────────────
+#Strategy 2: keyword extraction
 
 def _keyword_query(query: str) -> str:
     """Strip stopwords and question words; return content terms only."""
-    # remove question starters
     stripped = _QUESTION_STARTERS.sub("", query).strip("?. ")
     tokens = stripped.lower().split()
     keywords = [t.strip("?.,;:'\"") for t in tokens if t.strip("?.,;:'\"") not in _STOPWORDS]
     return " ".join(keywords)
 
 
-# ── Strategy 3: structural rephrasing ────────────────────────────────────────
+#Strategy 3: structural rephrasing
 
 _REPHRASE_PATTERNS = [
-    # "What is X?" → "definition of X"
     (re.compile(r"^what\s+is\s+(.+?)\??$", re.I),       r"definition of \1"),
-    # "What are X?" → "types of X"
     (re.compile(r"^what\s+are\s+(.+?)\??$", re.I),       r"types of \1"),
-    # "How does X work?" → "X process"
     (re.compile(r"^how\s+does\s+(.+?)\s+work\??$", re.I), r"\1 process"),
-    # "Can I X?" → "right to X"
     (re.compile(r"^can\s+i\s+(.+?)\??$", re.I),           r"right to \1"),
-    # "Am I entitled to X?" → "entitlement to X"
     (re.compile(r"^am\s+i\s+entitled\s+to\s+(.+?)\??$", re.I), r"entitlement to \1"),
-    # "What happens if X?" → "consequences of X"
     (re.compile(r"^what\s+happens\s+if\s+(.+?)\??$", re.I), r"consequences of \1"),
-    # "Do I have to X?" → "obligation to X"
     (re.compile(r"^do\s+i\s+have\s+to\s+(.+?)\??$", re.I), r"obligation to \1"),
-    # "What are my rights regarding X?" → "rights X"
     (re.compile(r"^what\s+are\s+my\s+rights\s+(?:regarding|about|for|in)\s+(.+?)\??$", re.I), r"legal rights \1"),
 ]
 
@@ -172,7 +158,7 @@ def _structural_rephrase(query: str) -> list[str]:
     return results
 
 
-# ── Public API ────────────────────────────────────────────────────────────────
+#Public API
 
 def expand_query(query: str, n: int = 3) -> list[str]:
     """

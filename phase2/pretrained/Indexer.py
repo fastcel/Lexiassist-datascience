@@ -17,15 +17,13 @@ import faiss
 from sentence_transformers import SentenceTransformer
 from rank_bm25 import BM25Okapi
 
-# Resolve imports independently of the terminal's current working directory.
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "phase2" / "shared"))
-from chunker import chunk_document, Chunk  # noqa: E402 (original chunker)
-from corpus import DEFAULT_DATASET, load_phase1_corpus  # noqa: E402
+from chunker import chunk_document, Chunk  
+from corpus import DEFAULT_DATASET, load_phase1_corpus  
 
-# Original implementation settings.
 EMBED_MODEL = "all-MiniLM-L6-v2"
-CHUNK_SIZE = 250          # Original code counts words, not tokenizer tokens.
+CHUNK_SIZE = 250          
 OVERLAP_SENTS = 2
 
 
@@ -93,7 +91,6 @@ def save(index, chunks, bm25, output_dir, source_csv, num_docs):
     with (output_dir / "bm25.pkl").open("wb") as f:
         pickle.dump(bm25, f)
 
-    # A comparable dataset fingerprint confirms both variants used the same CSV.
     sha256 = hashlib.sha256(Path(source_csv).read_bytes()).hexdigest()
     manifest = {
         "variant": "pretrained",

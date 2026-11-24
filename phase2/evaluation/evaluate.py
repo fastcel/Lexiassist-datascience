@@ -23,11 +23,7 @@ import sys
 from retriever import Retriever
 from query_expander import expand_query
 
-# ── Test set ──────────────────────────────────────────────────────────────────
-# relevant_docs: list of strings — a retrieved chunk counts as relevant if
-# its citation, jurisdiction, or text contains ANY of these substrings
-# (case-insensitive). Add more rows as you manually inspect your corpus.
-
+#Test set
 TEST_CASES = [
     {
         "query": "What is a defacto relationship under Australian law?",
@@ -71,7 +67,7 @@ TEST_CASES = [
     },
 ]
 
-# ── Relevance check ───────────────────────────────────────────────────────────
+#Relevance Check
 
 def _is_relevant(chunk, relevant_keywords: list[str]) -> bool:
     """Return True if any keyword appears in the chunk's text or metadata."""
@@ -84,7 +80,7 @@ def _is_relevant(chunk, relevant_keywords: list[str]) -> bool:
     return any(kw.lower() in haystack for kw in relevant_keywords)
 
 
-# ── Metrics ───────────────────────────────────────────────────────────────────
+#Metrics
 
 def hit_rate(results: list[dict], relevant_keywords: list[str]) -> float:
     """1 if any retrieved chunk is relevant, else 0."""
@@ -107,8 +103,7 @@ def mean_reciprocal_rank(results: list[dict], relevant_keywords: list[str]) -> f
     return 0.0
 
 
-# ── Runner ────────────────────────────────────────────────────────────────────
-
+#Runner
 def run_evaluation(k: int = 5):
     print(f"\n{'═' * 65}")
     print(f"  LEXIASSIST RAG EVALUATION  —  K={k}")
@@ -178,7 +173,7 @@ def interpret(hit: float, prec: float, mrr: float, k: int):
     print()
 
 
-# ── Entry point ───────────────────────────────────────────────────────────────
+#Entry point
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Evaluate LexiAssist RAG pipeline.")

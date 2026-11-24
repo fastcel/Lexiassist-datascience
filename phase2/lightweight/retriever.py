@@ -43,7 +43,7 @@ class Retriever:
     def __init__(self):
         print("Loading retriever...")
 
-        # ── TF-IDF (replaces sentence-transformers + FAISS) ──
+        #TF-IDF(replaces sentence-transformers + FAISS)
         if not os.path.exists(TFIDF_PATH):
             raise FileNotFoundError("Run indexer.py first (missing tfidf_vectorizer.pkl)")
         if not os.path.exists(TFIDF_MAT_PATH):
@@ -52,17 +52,14 @@ class Retriever:
         with open(TFIDF_PATH, "rb") as f:
             self.vectorizer = pickle.load(f)
 
-        # sparse matrix — memory efficient
         self.tfidf_matrix = load_npz(TFIDF_MAT_PATH)
-
-        # ── Chunks ──
         if not os.path.exists(CHUNKS_PATH):
             raise FileNotFoundError("Run indexer.py first (missing chunks.pkl)")
 
         with open(CHUNKS_PATH, "rb") as f:
             self.chunks = pickle.load(f)
 
-        # ── BM25 (sparse retrieval + reranker) ──
+        #BM25(sparse retrieval + reranker)
         if os.path.exists(BM25_PATH):
             with open(BM25_PATH, "rb") as f:
                 self.bm25 = pickle.load(f)
@@ -73,7 +70,6 @@ class Retriever:
 
         print(f"✔ Loaded {len(self.chunks)} chunks")
 
-    # ─────────────────────────────────────────────────────────────────
 
     def retrieve(self, query, sub_queries=None):
         queries = [query] + (sub_queries or [])
@@ -87,7 +83,6 @@ class Retriever:
         reranked = self._rerank(query, ids)
         return self._dedupe(reranked)[:FINAL_TOP]
 
-    # ─────────────────────────────────────────────────────────────────
 
     def _tfidf_search(self, queries):
         """
@@ -99,7 +94,6 @@ class Retriever:
 
         results = []
         for i in range(len(queries)):
-            # argsort ascending → reverse → take top DENSE_K
             top_ids = sims[i].argsort()[::-1][:DENSE_K].tolist()
             results.append(top_ids)
 

@@ -84,7 +84,7 @@ def chunk_document(
     if current_sentences:
         chunk_text = " ".join(current_sentences)
         start = text.find(current_sentences[0], char_cursor)
-        end = max(0, start) + len(chunk_text)  # fixed: guard start=-1 before adding length
+        end = max(0, start) + len(chunk_text)  
 
         chunks.append(Chunk(
             text=chunk_text,

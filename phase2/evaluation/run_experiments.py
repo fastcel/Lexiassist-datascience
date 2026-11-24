@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parents[2]
 EVAL_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT / "phase2"))
 sys.path.insert(0, str(ROOT / "phase2" / "shared"))
-from test_retrieval import check_same_corpus, import_retriever  # reuse proven loader
+from test_retrieval import check_same_corpus, import_retriever  
 
 METHODS = (
     "bm25", "tfidf", "minilm", "lightweight_rrf", "pretrained_rrf",
@@ -72,7 +72,7 @@ def execute(method, retriever, question):
         a = retriever._dense([question]); b = retriever._sparse([question])
         return as_results(retriever, retriever._rrf(a, b))
     if method in ("lightweight_full", "pretrained_full"):
-        return retriever.retrieve(question)[:K]  # original RRF + original reranker
+        return retriever.retrieve(question)[:K]  
     raise ValueError(method)
 
 

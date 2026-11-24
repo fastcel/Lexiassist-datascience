@@ -36,8 +36,6 @@ def load_phase1_corpus(csv_path=DEFAULT_DATASET, limit=None):
         raise ValueError("limit must be a positive integer")
 
     print(f"Reading Phase 1 dataset: {csv_path.name}")
-    # Explicit string dtype preserves identifiers and full text. The Phase 1
-    # CSV has long legal documents, so use the CSV, not the truncated XLSX.
     df = pd.read_csv(csv_path, dtype=str, encoding="utf-8-sig", low_memory=False)
 
     expected = {"version_id", "retrieval_text", "citation", "url", "jurisdiction"}
