@@ -1,0 +1,10 @@
+# Install with python -m pip install -r requirements_phase2.txt
+# Existing Phase 1 dependencies remain in requirements.txt.
+-r requirements.txt
+flask>=3.0.0
+rank-bm25>=0.2.2
+scikit-learn>=1.4.0
+scipy>=1.12.0
+sentence-transformers>=3.0.0
+faiss-cpu>=1.8.0
+ollama>=0.4.0

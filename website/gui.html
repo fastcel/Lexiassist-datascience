@@ -562,7 +562,7 @@
         </div>
         <div>
           <div class="bubble">
-            <p>Hello! I'm LexiAssist. Ask me anything about Australian law — I'll search the legal corpus, retrieve relevant documents, and explain the answer in plain English.</p>
+            <p>Hello! I'm LexiAssist. Ask me anything about Australian law — I search Australian legal documents and show cited passages. Select LLM answer to generate an explanation when Ollama is running.</p>
             <p>Try one of these to start:</p>
           </div>
           <div class="chip-row">
@@ -576,6 +576,20 @@
     </div>
 
     <div class="input-bar">
+      <div style="display:flex; flex-wrap:wrap; gap:12px; margin-bottom:10px; font-size:12px; color:var(--muted);">
+        <label>Retriever
+          <select id="variant-input" style="margin-left:6px; padding:6px; border:1px solid var(--border-md); border-radius:6px; background:white;">
+            <option value="lightweight">Lightweight (TF-IDF + BM25)</option>
+            <option value="pretrained">Pretrained (MiniLM + FAISS)</option>
+          </select>
+        </label>
+        <label>Answer
+          <select id="mode-input" style="margin-left:6px; padding:6px; border:1px solid var(--border-md); border-radius:6px; background:white;">
+            <option value="sources">Source excerpts (no LLM needed)</option>
+            <option value="llm">LLM answer (requires Ollama)</option>
+          </select>
+        </label>
+      </div>
       <div class="input-row">
         <input type="text" id="query-input" placeholder="Ask about Australian law..." onkeydown="if(event.key==='Enter') sendQuery()" />
         <button class="send-btn" id="send-btn" onclick="sendQuery()" aria-label="Send">
@@ -614,32 +628,7 @@
         <div class="panel-title">Document Library</div>
         <div class="panel-sub" id="docs-sub" style="margin-top:4px">Documents indexed from the Open Australian Legal Corpus.</div>
       </div>
-      <div class="doc-grid">
-        <div class="doc-card" onclick="fillQueryAndSwitch('What does the Family Law Act say about defacto relationships?')">
-          <div class="doc-title">Family Law Act 1975 — De Facto Relationships</div>
-          <div class="doc-meta"><span class="jur-tag">Federal</span><span class="doc-stat">s 4AA · property settlement · Part VIIIAB</span></div>
-        </div>
-        <div class="doc-card" onclick="fillQueryAndSwitch('What are tenant rights under the Residential Tenancies Act?')">
-          <div class="doc-title">Residential Tenancies Act 2010 — NSW</div>
-          <div class="doc-meta"><span class="jur-tag">NSW</span><span class="doc-stat">repairs · bond · eviction · entry notice</span></div>
-        </div>
-        <div class="doc-card" onclick="fillQueryAndSwitch('What is misleading conduct under Australian Consumer Law?')">
-          <div class="doc-title">Australian Consumer Law — Misleading Conduct</div>
-          <div class="doc-meta"><span class="jur-tag">Federal</span><span class="doc-stat">s 18 · consumer guarantees · remedies</span></div>
-        </div>
-        <div class="doc-card" onclick="fillQueryAndSwitch('What are director duties under the Corporations Act?')">
-          <div class="doc-title">Corporations Act 2001 — Director Duties</div>
-          <div class="doc-meta"><span class="jur-tag">Federal</span><span class="doc-stat">s 180–184 · fiduciary · care and diligence</span></div>
-        </div>
-        <div class="doc-card" onclick="fillQueryAndSwitch('What are criminal offences under the Criminal Code Act?')">
-          <div class="doc-title">Criminal Code Act 1995 — General Principles</div>
-          <div class="doc-meta"><span class="jur-tag">Federal</span><span class="doc-stat">fault elements · physical elements · liability</span></div>
-        </div>
-        <div class="doc-card" onclick="fillQueryAndSwitch('What are rights under the Fair Work Act for unfair dismissal?')">
-          <div class="doc-title">Fair Work Act 2009 — Unfair Dismissal</div>
-          <div class="doc-meta"><span class="jur-tag">Federal</span><span class="doc-stat">Pt 3-2 · notice · reinstatement · remedies</span></div>
-        </div>
-      </div>
+      <div class="doc-grid" id="doc-grid"></div>
     </div>
   </div>
 
@@ -649,7 +638,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const API = "http://localhost:5000";
+const API = ""; // Flask serves frontend and API from the same origin
 let busy = false;
 
 // ── Status check ──────────────────────────────────────────────────────────────
@@ -657,10 +646,11 @@ async function checkStatus() {
   try {
     const r = await fetch(`${API}/api/status`);
     const d = await r.json();
+    if (!r.ok) throw new Error(d.error || "Index is unavailable");
     document.getElementById("status-dot").className = "status-dot online";
     document.getElementById("status-label").textContent = `${d.chunks_indexed} chunks indexed`;
     document.getElementById("docs-sub").textContent =
-      `${d.chunks_indexed} chunks indexed · model: ${d.embed_model}`;
+      `${d.chunks_indexed} chunks indexed · default: ${d.default_variant}`;
   } catch {
     document.getElementById("status-dot").className = "status-dot error";
     document.getElementById("status-label").textContent = "Server offline";
@@ -733,31 +723,42 @@ function removeTyping() {
   if (el) el.remove();
 }
 
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, c => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+  }[c]));
+}
+
 function formatAnswer(text) {
-  return text
-    .split("\n\n").map(p => `<p>${p.replace(/\n/g, "<br>")
-      .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-      .replace(/\*(.*?)\*/g, "<em>$1</em>")}</p>`)
-    .join("");
+  return escapeHtml(text).split(/\n\s*\n/).map(p => `<p>${p.replace(/\n/g, "<br>")
+    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+    .replace(/\*(.*?)\*/g, "<em>$1</em>")}</p>`).join("");
+}
+
+function safeUrl(raw) {
+  try {
+    const url = new URL(raw, window.location.origin);
+    return (url.protocol === "https:" || url.protocol === "http:") ? url.href : null;
+  } catch { return null; }
 }
 
 function buildCitations(citations, subQueries) {
   let html = "";
   if (subQueries && subQueries.length) {
     html += `<div class="sub-queries">`;
-    subQueries.forEach(sq => {
-      html += `<span class="sq-pill" title="Sub-query used for retrieval">${sq}</span>`;
-    });
+    subQueries.forEach(sq => { html += `<span class="sq-pill">${escapeHtml(sq)}</span>`; });
     html += `</div>`;
   }
   if (citations && citations.length) {
     html += `<div class="citations">`;
     citations.forEach(c => {
-      const label = c.citation || c.jurisdiction || "Source";
-      html += `<span class="cite-pill">
-        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        [${c.index}] ${label}
-      </span>`;
+      const label = `[${Number(c.index)}] ${escapeHtml(c.citation || c.jurisdiction || "Source")}`;
+      const href = safeUrl(c.url);
+      if (href) {
+        html += `<a class="cite-pill" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+      } else {
+        html += `<span class="cite-pill">${label}</span>`;
+      }
     });
     html += `</div>`;
   }
@@ -769,41 +770,71 @@ async function sendQuery() {
   const input = document.getElementById("query-input");
   const query = input.value.trim();
   if (!query) return;
-
+  const variant = document.getElementById("variant-input").value;
+  const mode = document.getElementById("mode-input").value;
   input.value = "";
   busy = true;
   document.getElementById("send-btn").disabled = true;
-
-  addMsg("user", query);
+  addMsg("user", escapeHtml(query));
   addTyping();
-
   try {
     const res = await fetch(`${API}/api/ask`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query }),
+      body: JSON.stringify({ query, variant, mode }),
     });
-
-    if (!res.ok) throw new Error(`Server error ${res.status}`);
     const data = await res.json();
+    if (!res.ok || data.error) throw new Error(data.error || `Server error ${res.status}`);
     removeTyping();
-
-    if (data.error) {
-      showToast(data.error);
-      addMsg("ai", `<p>Sorry, something went wrong: ${data.error}</p>`);
-    } else {
-      const extras = buildCitations(data.citations, data.sub_queries);
-      addMsg("ai", formatAnswer(data.answer), extras);
-    }
+    const extras = buildCitations(data.citations, data.sub_queries);
+    const label = `<p><small>${escapeHtml(data.variant)} · ${data.response_mode === "llm" ? "LLM answer" : "Retrieved source excerpts"}</small></p>`;
+    const warning = data.warning ? `<p><em>${escapeHtml(data.warning)}</em></p>` : "";
+    addMsg("ai", label + warning + formatAnswer(data.answer), extras);
   } catch (e) {
     removeTyping();
-    showToast("Could not reach the server. Is it running on port 5000?");
-    addMsg("ai", `<p>Could not reach the LexiAssist server. Make sure you've run <code>python server.py</code>.</p>`);
+    showToast(e.message || "Could not connect to the server.");
+    addMsg("ai", `<p>${escapeHtml(e.message || "The request failed.")}</p>`);
+  } finally {
+    busy = false;
+    document.getElementById("send-btn").disabled = false;
   }
-
-  busy = false;
-  document.getElementById("send-btn").disabled = false;
 }
+
+async function loadDocs() {
+  try {
+    const response = await fetch(`${API}/api/documents`);
+    const data = await response.json();
+    if (!response.ok) return;
+    const grid = document.getElementById("doc-grid");
+    grid.replaceChildren();
+    (data.documents || []).forEach(doc => {
+      const card = document.createElement("div");
+      card.className = "doc-card";
+      const title = document.createElement("div");
+      title.className = "doc-title";
+      title.textContent = doc.citation;
+      const meta = document.createElement("div");
+      meta.className = "doc-meta";
+      const jurisdiction = document.createElement("span");
+      jurisdiction.className = "jur-tag";
+      jurisdiction.textContent = doc.jurisdiction || "Jurisdiction unknown";
+      meta.appendChild(jurisdiction);
+      const link = safeUrl(doc.url);
+      if (link) {
+        const anchor = document.createElement("a");
+        anchor.href = link;
+        anchor.target = "_blank";
+        anchor.rel = "noopener noreferrer";
+        anchor.textContent = "View legal source";
+        anchor.style.fontSize = "12px";
+        meta.appendChild(anchor);
+      }
+      card.append(title, meta);
+      grid.appendChild(card);
+    });
+  } catch (e) { console.warn("Could not load document preview", e); }
+}
+loadDocs();
 
 // ── Simplify ──────────────────────────────────────────────────────────────────
 const SAMPLE = `The party of the first part hereby covenants and agrees that in the event of the dissolution of the aforementioned de facto relationship as defined pursuant to section 4AA of the Family Law Act 1975 (Cth), all property acquired during the subsistence of the relationship shall be subject to the equitable distribution provisions contained within Part VIIIAB thereof, notwithstanding any antecedent agreement to the contrary, unless such agreement satisfies the requirements of a binding financial agreement under Division 4 of the said Part.`;

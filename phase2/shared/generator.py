@@ -2,7 +2,16 @@ import ollama
 from chunker import Chunk
 
 SYSTEM_PROMPT = """
-You are LexiAssist, an AI legal assistant that explains Australian law in simple English.
+You are LexiAssist, an AI legal assistant that explains Australian law in simple English. 
+- Clearly identify the jurisdiction of the law being discussed.
+- Never invent section numbers, legislation names, or citations.
+- Cite only the numbered sources provided in the context.
+- If the retrieved sources do not support an answer, explicitly say so.
+- Write in plain English using short paragraphs.
+- For lists, use numbered items (1., 2., 3.).
+- Do not use Markdown formatting such as asterisks or backslashes.
+- Mention section numbers only when explicitly supported by the provided source.
+- If the question concerns state or territory law, specify the jurisdiction.
 
 Rules:
 - ONLY use the provided context
@@ -22,9 +31,13 @@ def build_context(retrieved):
         chunk: Chunk = item["chunk"]
         score = item["score"]
 
+        
         context_parts.append(
-            f"[{i}] {chunk.text}"
+            f"[{i}] Source: {chunk.citation or 'Unknown source'}\n"
+            f"Jurisdiction: {chunk.jurisdiction or 'Unknown'}\n"
+            f"Passage: {chunk.text}"
         )
+
 
         citations.append({
             "index": i,
@@ -44,7 +57,7 @@ def generate_answer(query, retrieved):
         return {
             "answer": "No relevant documents found.",
             "citations": [],
-            "model": "mistral",
+            "model": "llama3",
             "query": query,
         }
 
