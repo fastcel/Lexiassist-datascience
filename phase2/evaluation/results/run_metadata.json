@@ -1,0 +1,27 @@
+{
+  "questions": 20,
+  "methods": [
+    "bm25",
+    "tfidf",
+    "minilm",
+    "lightweight_rrf",
+    "pretrained_rrf",
+    "lightweight_full",
+    "pretrained_full"
+  ],
+  "top_k": 5,
+  "load_seconds": {
+    "lightweight": 7.457069900003262,
+    "pretrained": 19.952977200009627
+  },
+  "mean_retrieval_ms": {
+    "bm25": 223.51,
+    "tfidf": 382.92,
+    "minilm": 47.77,
+    "lightweight_rrf": 621.19,
+    "pretrained_rrf": 304.29,
+    "lightweight_full": 727.58,
+    "pretrained_full": 1026.58
+  },
+  "warning": "Latency and candidates only. No relevance labels verified yet."
+}
