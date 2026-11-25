@@ -1,4 +1,4 @@
-# LexiAssist — Australian Legal Research RAG (Data Science Course Project)
+# LexiAssist- Australian Legal Research RAG (Data Science Course Project)
 
 **Status:** Phase 1 and Phase 2 completed; experimental evaluation performed on a sampled corpus.  
 **Website:** Local Flask application (`website/server.py`); no public deployment URL.  
