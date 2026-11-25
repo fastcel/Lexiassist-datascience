@@ -1,0 +1,20 @@
+{
+  "status": "FROZEN_MODEL_PASSAGE_REVIEWED",
+  "reviewer_project_owner": "Meerab",
+  "screening_performed_by": "ChatGPT from supplied source excerpts",
+  "review_date": "2026-11-25",
+  "question_count": 100,
+  "dev": 40,
+  "test": 60,
+  "limitations": "Passage text checked against question; not independently verified by a human/legal expert; legal currency and all external URLs not authenticated",
+  "source_benchmark_sha256": "40b8b805659c61b3d48de23ae7a161b85018712f375426cdd5a892f59a663055",
+  "verified_copy_sha256": "40b8b805659c61b3d48de23ae7a161b85018712f375426cdd5a892f59a663055",
+  "dev_sha256": "9c06f7057b09e698c943889613ba169a7f088567b5a583ccc129fa7e36931a8c",
+  "test_sha256": "b77566a263b20795e8ea8e25b406fb7f1dca5b08c5d7bf91915dfabf31b9961e",
+  "reviewer_assignments": {
+    "Reviewer_A": "Meerab",
+    "Reviewer_B": "Shehryar",
+    "Reviewer_C": "Momna"
+  },
+  "reviewer_field_means": "Assigned team member; automated source-passage screening by ChatGPT, not independently reviewed by named humans"
+}

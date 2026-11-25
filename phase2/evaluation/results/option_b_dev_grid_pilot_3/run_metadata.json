@@ -1,0 +1,33 @@
+{
+  "questions": 3,
+  "variants": [
+    "lightweight",
+    "pretrained"
+  ],
+  "rrf_constants": [
+    30,
+    60,
+    90
+  ],
+  "subqueries": [
+    0,
+    1
+  ],
+  "top_k": 5,
+  "total_unique_judgments": 21,
+  "mean_retrieval_ms": {
+    "lightweight_rrf30_expand0": 1294.58,
+    "lightweight_rrf30_expand1": 1728.36,
+    "lightweight_rrf60_expand0": 1243.16,
+    "lightweight_rrf60_expand1": 1708.37,
+    "lightweight_rrf90_expand0": 1236.1,
+    "lightweight_rrf90_expand1": 1688.38,
+    "pretrained_rrf30_expand0": 1282.39,
+    "pretrained_rrf30_expand1": 1723.3,
+    "pretrained_rrf60_expand0": 1268.03,
+    "pretrained_rrf60_expand1": 1697.33,
+    "pretrained_rrf90_expand0": 1308.66,
+    "pretrained_rrf90_expand1": 1714.79
+  },
+  "warning": "All relevance labels must be reviewed before scoring. Development results only."
+}

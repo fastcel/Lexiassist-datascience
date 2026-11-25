@@ -1,0 +1,13 @@
+﻿query_id,method,latency_ms,retrieved
+Q001,lightweight_off,868.41,5
+Q001,lightweight_on,1323.66,5
+Q001,pretrained_off,1169.53,5
+Q001,pretrained_on,1545.9,5
+Q002,lightweight_off,877.16,5
+Q002,lightweight_on,1607.14,5
+Q002,pretrained_off,1117.9,5
+Q002,pretrained_on,1760.05,5
+Q003,lightweight_off,851.84,5
+Q003,lightweight_on,1399.03,5
+Q003,pretrained_off,1168.12,5
+Q003,pretrained_on,1627.42,5

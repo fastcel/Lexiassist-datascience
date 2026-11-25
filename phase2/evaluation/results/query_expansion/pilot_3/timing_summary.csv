@@ -1,0 +1,5 @@
+﻿method,questions,mean_latency_ms
+lightweight_off,3,865.8
+lightweight_on,3,1443.28
+pretrained_off,3,1151.85
+pretrained_on,3,1644.46

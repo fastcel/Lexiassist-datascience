@@ -1,0 +1,17 @@
+{
+  "question_count": 3,
+  "variants": [
+    "lightweight",
+    "pretrained"
+  ],
+  "retrieval_methods": [
+    "lightweight_off",
+    "lightweight_on",
+    "pretrained_off",
+    "pretrained_on"
+  ],
+  "top_k": 5,
+  "queries_with_expansion": 3,
+  "unique_question_passage_pairs": 28,
+  "note": "No retrieval-quality scores calculated. Candidate passages require source-based judgments."
+}

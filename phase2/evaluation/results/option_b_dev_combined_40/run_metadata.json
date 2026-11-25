@@ -1,0 +1,26 @@
+{
+  "question_count": 40,
+  "methods": [
+    "bm25",
+    "lightweight_full",
+    "lightweight_rrf",
+    "lightweight_rrf30_expand0",
+    "lightweight_rrf30_expand1",
+    "lightweight_rrf60_expand0",
+    "lightweight_rrf60_expand1",
+    "lightweight_rrf90_expand0",
+    "lightweight_rrf90_expand1",
+    "minilm",
+    "pretrained_full",
+    "pretrained_rrf",
+    "pretrained_rrf30_expand0",
+    "pretrained_rrf30_expand1",
+    "pretrained_rrf60_expand0",
+    "pretrained_rrf60_expand1",
+    "pretrained_rrf90_expand0",
+    "pretrained_rrf90_expand1",
+    "tfidf"
+  ],
+  "candidate_pool_size": 503,
+  "warning": "All relevance grades intentionally blank. Do NOT score before human review. All methods now share same judged pool."
+}
