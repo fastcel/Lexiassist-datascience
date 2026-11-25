@@ -1,0 +1,21 @@
+query_id,query,domain
+Q001,What is a de facto relationship under Australian law?,family_law
+Q002,What are a tenant's rights when a landlord does not make repairs?,tenancy
+Q003,How does negligence work in Australian tort law?,tort
+Q004,What constitutes a valid contract in Australia?,contract
+Q005,What are the legal duties and rights of a company director?,corporations
+Q006,What happens when someone breaches a lease agreement?,tenancy
+Q007,What is the process for appealing a court decision?,procedure
+Q008,What are parental responsibilities after separation?,family_law
+Q009,What penalties may apply to criminal offences in Australia?,criminal
+Q010,Can an employer terminate employment without notice?,employment
+Q011,What is the meaning of unfair dismissal under Australian employment law?,employment
+Q012,How does Australian legislation distinguish primary and secondary legislation?,legislation
+Q013,What rules apply to making a residential tenancy bond claim?,tenancy
+Q014,What does a duty of care require in a negligence claim?,tort
+Q015,What is the purpose of an interpretation act in construing statutory definitions?,interpretation
+Q016,What is a statutory limitation period for civil actions?,civil_procedure
+Q017,How are administrative decisions reviewed by a tribunal?,administrative
+Q018,What are the duties of a trustee under Australian trust law?,trusts
+Q019,What is the legal effect of a statutory commencement provision?,legislation
+Q020,How does a court decide whether a contractual term is enforceable?,contract

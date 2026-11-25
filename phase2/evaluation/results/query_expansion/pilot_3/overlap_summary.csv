@@ -1,0 +1,7 @@
+﻿query_id,variant,common_top5,new_in_top5_with_expansion,top5_jaccard,off_latency_ms,on_latency_ms
+Q001,lightweight,5,0,1.0,868.41,1323.66
+Q001,pretrained,5,0,1.0,1169.53,1545.9
+Q002,lightweight,3,2,0.4286,877.16,1607.14
+Q002,pretrained,3,2,0.4286,1117.9,1760.05
+Q003,lightweight,3,2,0.4286,851.84,1399.03
+Q003,pretrained,3,2,0.4286,1168.12,1627.42

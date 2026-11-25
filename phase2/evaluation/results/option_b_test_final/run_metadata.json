@@ -1,0 +1,25 @@
+{
+  "test_questions": 60,
+  "selected_config": {
+    "lightweight": {
+      "method": "tfidf",
+      "kind": "baseline",
+      "dev_ndcg_at_5": "0.5996",
+      "dev_mean_latency_ms": "391.389"
+    },
+    "pretrained": {
+      "method": "pretrained_rrf30_expand1",
+      "kind": "tuned",
+      "rrf_k": 30,
+      "expand_n": 1,
+      "dev_ndcg_at_5": "0.7099",
+      "dev_mean_latency_ms": "1465.7963"
+    }
+  },
+  "mean_latency_ms": {
+    "selected_lightweight": 390.14,
+    "selected_pretrained": 1597.9
+  },
+  "ungraded_unique_candidates": 439,
+  "warning": "No evaluation scores until every passage is manually judged; do not tune using test results."
+}

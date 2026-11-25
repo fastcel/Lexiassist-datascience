@@ -1,0 +1,21 @@
+{
+  "dev_metrics_sha256": "a7060967d62e343830db4c6b7732ceab45c00cdf8837d91686b7ae0afe240f6c",
+  "benchmark_freeze_sha256": "e1399bb654adc26b9301eb8425931c265574dc13a561dce552a38d05e696274a",
+  "source": "development set only, provisional until relevance judgments independently verified",
+  "selected": {
+    "lightweight": {
+      "method": "tfidf",
+      "kind": "baseline",
+      "dev_ndcg_at_5": "0.5996",
+      "dev_mean_latency_ms": "391.389"
+    },
+    "pretrained": {
+      "method": "pretrained_rrf30_expand1",
+      "kind": "tuned",
+      "rrf_k": 30,
+      "expand_n": 1,
+      "dev_ndcg_at_5": "0.7099",
+      "dev_mean_latency_ms": "1465.7963"
+    }
+  }
+}

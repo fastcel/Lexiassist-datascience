@@ -1,0 +1,6 @@
+﻿.env
+.venv/
+__pycache__/
+*.pyc
+/data/australian_legal_corpus_preprocessed.csv
+/phase2/artifacts/

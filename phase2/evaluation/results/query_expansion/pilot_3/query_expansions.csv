@@ -1,0 +1,4 @@
+﻿query_id,question,expansion_count,expanded_queries
+Q001,What is a de facto relationship under Australian law?,3,what is a de facto relationship under australian legislation || what is a de facto relationship under australian act || what is a defacto relationship under australian law
+Q002,What are a tenant's rights when a landlord does not make repairs?,3,what are a tenant's entitlements when a landlord does not make repairs || what are a tenant's legal rights when a landlord does not make repairs || what are a tenant's rights when a lessor does not make repairs
+Q003,How does negligence work in Australian tort law?,3,how does duty of care work in australian tort law || how does tort work in australian tort law || how does negligence work in australian negligence law

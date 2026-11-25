@@ -1,0 +1,412 @@
+﻿query_id,query,domain,chunk_key,doc_id,chunk_index,citation,url,jurisdiction,passage_text,relevance_grade
+Q001,What is a de facto relationship under Australian law?,family_law,nsw_legislation:2024-05-31/act-1999-081::chunk_2,nsw_legislation:2024-05-31/act-1999-081,2,Retirement Villages Act 1999 (NSW),https://legislation.nsw.gov.au/view/whole/html/inforce/2024-05-31/act-1999-081,new_south_wales,"(2) Clause 14 of Schedule 4 commences on the date of assent to this Act.
+
+3 Objects of Act
+The objects of this Act are—
+(a) to set out particular rights and obligations of residents and operators of retirement villages, and
+(b) to facilitate the disclosure of information to prospective residents of retirement villages, and
+(c) to require contracts between residents and operators of retirement villages to contain full details of the rights and obligations of the parties, and
+(d) to facilitate resident input, where desired by residents, into the management of retirement villages, and
+(e) to establish appropriate mechanisms for the resolution of certain disputes between residents and operators of retirement villages, and
+(f) to encourage the retirement village industry to adopt best practice management standards.
+
+4 Definitions
+(1) In this Act—
+accounts of a retirement village means the accounts referred to in Division 6 of Part 7.
+annual management meeting means the meeting referred to in section 72A.
+approved annual budget means a budget taken to be an approved annual budget under section 116.
+association and association property have the same meanings as they have in the Community Land Management Act 2021.
+business day means a day that is not—
+(a) a Saturday or Sunday, or
+(b) a public holiday or bank holiday throughout the State.
+capital maintenance means works carried out for the purpose of repairing or maintaining an item of capital and includes works prescribed by the regulations as being capital maintenance, but does not include works that are prescribed by the regulations as not being capital maintenance.
+capital replacement means works carried out for the purpose of replacing an item of capital, but does not include capital maintenance.
+capital works fund means a fund established under section 99.
+close associate of an operator of a retirement village means—
+(a) if the operator is a natural person—
+(i) the spouse, de facto partner, parent, child or sibling of the operator, or
+(ii) the parent, child or sibling by marriage of the operator, or
+(iii) a body corporate of which the operator (or the operator's spouse, de facto partner, parent, child or sibling, or the operator's parent, child or sibling by marriage) is a director or secretary, and
+(b) if the operator is a body corporate—
+(i) a director or secretary of the body corporate or of a related body corporate (within the meaning of the Corporations Act 2001 of the Commonwealth), or
+(ii) the spouse, de facto partner, parent, child or sibling (or the parent, child or sibling by marriage) of such a director or secretary, or
+(iii) a related body corporate, and
+(c) in either case—an agent or employee of the operator. Note—
+""De facto partner"" is defined in section 21C of the Interpretation Act 1987.
+community land scheme means a scheme (other than a strata scheme) within the meaning of the Community Land Management Act 2021.
+company title scheme means a scheme under which a group of adjoining or adjacent premises (including residential premises) is owned or leased by a corporation each of whose shareholders has, by virtue of his or her shares, an exclusive right (under a lease or otherwise) to occupy one or more of the residential premises.
+condition report means a report referred to in section 38. Consumer Price Index means the Consumer Price Index (All Groups) for Sydney as published by the Australian Statistician.
+de facto relationship has the same meaning as it has in the Property (Relationships) Act 1984.
+departure fee—see section 156.
+development and development consent have the same meanings as they have in the Environmental Planning and Assessment Act 1979.
+disclosure statement means a statement referred to in section 18 (3A).
+exercise a function includes perform a duty.
+financial year of a retirement village is the period determined under section 91.
+former occupant of a retirement village means a resident, or a former resident, of the village—
+(a) who has permanently vacated any residential premises in the village, and
+(b) whose residence contract has been terminated (unless the resident is a registered interest holder (other than a person referred to in section 7 (1) (c)) in respect of the residential premises concerned), and
+(c) who continues to have rights or liabilities under a village contract relating to the village,
+and includes, except in Part 10AA, the executor or administrator of the estate of such a person.
+function includes a power, authority or duty.
+general inquiry document means a document referred to in section 18 (2).
+general services means services provided, or made available, by or on behalf of the operator, to all residents of a retirement village, and includes such services as may be prescribed by the regulations for the purposes of this definition.",
+Q001,What is a de facto relationship under Australian law?,family_law,nsw_legislation:2024-05-31/act-1999-081::chunk_3,nsw_legislation:2024-05-31/act-1999-081,3,Retirement Villages Act 1999 (NSW),https://legislation.nsw.gov.au/view/whole/html/inforce/2024-05-31/act-1999-081,new_south_wales,"Note—
+""De facto partner"" is defined in section 21C of the Interpretation Act 1987.
+community land scheme means a scheme (other than a strata scheme) within the meaning of the Community Land Management Act 2021.
+company title scheme means a scheme under which a group of adjoining or adjacent premises (including residential premises) is owned or leased by a corporation each of whose shareholders has, by virtue of his or her shares, an exclusive right (under a lease or otherwise) to occupy one or more of the residential premises.
+condition report means a report referred to in section 38. Consumer Price Index means the Consumer Price Index (All Groups) for Sydney as published by the Australian Statistician.
+de facto relationship has the same meaning as it has in the Property (Relationships) Act 1984.
+departure fee—see section 156.
+development and development consent have the same meanings as they have in the Environmental Planning and Assessment Act 1979.
+disclosure statement means a statement referred to in section 18 (3A).
+exercise a function includes perform a duty.
+financial year of a retirement village is the period determined under section 91.
+former occupant of a retirement village means a resident, or a former resident, of the village—
+(a) who has permanently vacated any residential premises in the village, and
+(b) whose residence contract has been terminated (unless the resident is a registered interest holder (other than a person referred to in section 7 (1) (c)) in respect of the residential premises concerned), and
+(c) who continues to have rights or liabilities under a village contract relating to the village,
+and includes, except in Part 10AA, the executor or administrator of the estate of such a person.
+function includes a power, authority or duty.
+general inquiry document means a document referred to in section 18 (2).
+general services means services provided, or made available, by or on behalf of the operator, to all residents of a retirement village, and includes such services as may be prescribed by the regulations for the purposes of this definition. Note—
+Examples of general services are management and administration services and gardening and general maintenance.
+holding deposit means money paid to the operator of a retirement village in consideration for not offering particular residential premises in the village to any other person pending a prospective resident's entering into a residence contract with the operator.
+ingoing contribution—see section 6.
+investigator means an investigator appointed under the Fair Trading Act 1987.
+item of capital means—
+(a) any building or structure in a retirement village, and
+(b) any plant, machinery or equipment used in the operation of the village, and
+(c) any part of the infrastructure of the village, and
+(d) any other item prescribed by the regulations,
+but does not include any item excluded from this definition by the regulations.
+licensed conveyancer means the holder of a licence in force under the Conveyancers Licensing Act 2003.
+operator of a retirement village means the person who manages or controls the retirement village, and includes—
+(a) a person (other than a resident or other person referred to in subsection (2)) who owns land in the village, and
+(b) any other person or class of persons prescribed by the regulations for the purposes of this definition,
+but does not include—
+(c) the relevant association of a community land scheme or the owners corporation of a strata scheme, or
+(d) the managing agent of such a scheme, or
+(e) any person or class of persons excluded from this definition by the regulations.
+optional services means optional services made available, by or on behalf of the operator, to individual residents of a retirement village, and includes such services as may be prescribed by the regulations for the purposes of this definition.",
+Q001,What is a de facto relationship under Australian law?,family_law,western_australian_legislation:mrdoc_45532/law_a802::chunk_13,western_australian_legislation:mrdoc_45532/law_a802,13,Superannuation and Family Benefits Act 1938 (WA),https://www.legislation.wa.gov.au/legislation/statutes.nsf/RedirectURL?OpenAgent&query=mrdoc_45532.docx,western_australia,"De facto spouses
+(1) For the purposes of this Act de facto partners are to be regarded as spouses.
+(2) For the purposes of this Act a de facto relationship is to be regarded as a marriage that took place when the relationship commenced and the cessation of the relationship, other than by reason of death, is to be regarded as a divorce.
+[(3)-(5) deleted]
+(6) Where, as a result of this section —
+(a) more than one person is entitled as a spouse to a benefit under this Act; or
+(b) children of different spouses are entitled to a benefit under this Act,
+the Board may determine that the amount of the benefit to which each person is entitled is such portion as it considers just of the benefit that would be payable if there had been only one spouse.
+[Section 6AA inserted: No. 8 of 1993 s. 65; amended in Gazette 28 Jun 2002 p. 3033.]
+
+6A. Admission to Fund of certain employees of Civil Service Association
+(1) In this section —
+the Association means the body corporate under the name of The Civil Service Association of Western Australia;
+the existing Association scheme means the scheme established by deed of trust made on 23 June 1966 between the Association and certain other parties for the purpose of making provision for retiring pensions and benefits to present and future employees of the Association. (2) Upon the execution by the Treasurer pursuant to the authority of this section of an agreement with the Association and subject to any term of the agreement —
+(a) any employee of the Association who is at the time of the execution of the agreement a contributor to the existing Association scheme shall become a contributor under this Act and shall be deemed —
+(i) to have become such a contributor on the day on which he became a contributor to the existing Association scheme; and
+(ii) to have contributed for units of pension under this Act at the same time as he respectively contributed for units of pension under the existing association scheme;
+and
+(b) any person who, after the execution of the agreement, becomes a full‑time employee of the Association is eligible to become a contributor under this Act if he would be eligible at that time to become a contributor had he become an employee in a department on that date.",
+Q001,What is a de facto relationship under Australian law?,family_law,western_australian_legislation:mrdoc_46312/law_a384::chunk_10,western_australian_legislation:mrdoc_46312/law_a384,10,Interpretation Act 1984 (WA),https://www.legislation.wa.gov.au/legislation/statutes.nsf/RedirectURL?OpenAgent&query=mrdoc_46312.docx,western_australia,"British subject etc., references to
+(1) In this section —
+Commonwealth Act means the Australian Citizenship Act 1948 3 of the Parliament of the Commonwealth, as amended;
+law of the State means a written law in force in the State. (2) A reference in any law of the State to a British subject or to a natural born or naturalized subject of Her Majesty or to any other like expression, shall be read as a reference to an Australian citizen and to any other person who, under the Commonwealth Act, has the status of a British subject or has the status of a British subject without citizenship. (3) Where a rule of law applies to, or in relation to, or has effect with respect to a British subject, that rule of law applies to, or in relation to, or has effect with respect to an Australian citizen and any other person who, under the Commonwealth Act, has the status of a British subject or has the status of a British subject without citizenship, as if that Australian citizen or other person were a British subject.
+
+13A. De facto relationship and de facto partner, references to
+(1) A reference in a written law to a de facto relationship shall be construed as a reference to a relationship (other than a legal marriage) between 2 persons who live together in a marriage‑like relationship. (2) The following factors are indicators of whether or not a de facto relationship exists between 2 persons, but are not essential —
+(a) the length of the relationship between them;
+(b) whether the 2 persons have resided together;
+(c) the nature and extent of common residence;
+(d) whether there is, or has been, a sexual relationship between them;
+(e) the degree of financial dependence or interdependence, and any arrangements for financial support, between them;
+(f) the ownership, use and acquisition of their property (including property they own individually);
+(g) the degree of mutual commitment by them to a shared life;
+(h) whether they care for and support children;
+(i) the reputation, and public aspects, of the relationship between them.",
+Q001,What is a de facto relationship under Australian law?,family_law,western_australian_legislation:mrdoc_46312/law_a384::chunk_11,western_australian_legislation:mrdoc_46312/law_a384,11,Interpretation Act 1984 (WA),https://www.legislation.wa.gov.au/legislation/statutes.nsf/RedirectURL?OpenAgent&query=mrdoc_46312.docx,western_australia,"De facto relationship and de facto partner, references to
+(1) A reference in a written law to a de facto relationship shall be construed as a reference to a relationship (other than a legal marriage) between 2 persons who live together in a marriage‑like relationship. (2) The following factors are indicators of whether or not a de facto relationship exists between 2 persons, but are not essential —
+(a) the length of the relationship between them;
+(b) whether the 2 persons have resided together;
+(c) the nature and extent of common residence;
+(d) whether there is, or has been, a sexual relationship between them;
+(e) the degree of financial dependence or interdependence, and any arrangements for financial support, between them;
+(f) the ownership, use and acquisition of their property (including property they own individually);
+(g) the degree of mutual commitment by them to a shared life;
+(h) whether they care for and support children;
+(i) the reputation, and public aspects, of the relationship between them. (3) It does not matter whether —
+(a) the persons are different sexes or the same sex; or
+(b) either of the persons is legally married to someone else or in another de facto relationship. (4) A reference in a written law to a de facto partner shall be construed as a reference to a person who lives, or where the context requires, has lived, in a de facto relationship. (5) The de facto partner of a person (the first person) is the person who lives, or lived, in the de facto relationship with the first person.
+[Section 13A inserted: No. 3 of 2002 s. 85.]
+
+13B.",
+Q001,What is a de facto relationship under Australian law?,family_law,western_australian_legislation:mrdoc_46312/law_a384::chunk_12,western_australian_legislation:mrdoc_46312/law_a384,12,Interpretation Act 1984 (WA),https://www.legislation.wa.gov.au/legislation/statutes.nsf/RedirectURL?OpenAgent&query=mrdoc_46312.docx,western_australia,"(4) A reference in a written law to a de facto partner shall be construed as a reference to a person who lives, or where the context requires, has lived, in a de facto relationship. (5) The de facto partner of a person (the first person) is the person who lives, or lived, in the de facto relationship with the first person.
+[Section 13A inserted: No. 3 of 2002 s. 85.]
+
+13B. Standards Association of Australia, references to
+A reference in a written law (other than this Act) to the Standards Association of Australia shall be read as a reference to Standards Australia.
+[Section 13B inserted as 13A: No. 74 of 2003 s. 69(3); renumbered as 13B under the Reprints Act 1984 s. 7(5)(c)(ii).]
+
+13CA. Local government districts, references to
+(1) In a written law —
+local government district means a district under the Local Government Act 1995. (2) A reference in a written law to a named local government district is a reference to the local government district that has that name under the Local Government Act 1995. Example for this section:
+1. ""Perth local government district"" refers to the local government district named Perth.
+2. ""Narrogin (Shire) local government district"" refers to the local government district named Narrogin (Shire).]
+[Section 13CA inserted: No. 31 of 2010 s. 5; amended: No. 17 of 2014 s. 27.]
+
+13C. When death of a person occurs
+For the purposes of the law of this State, a person dies when there occurs —
+(a) irreversible cessation of all function of the person's brain; or
+(b) irreversible cessation of circulation of blood in the person's body.
+[Section 13C inserted: No. 29 of 2008 s. 35(3).]
+
+13D.",
+Q002,What are a tenant's rights when a landlord does not make repairs?,tenancy,federal_court_of_australia:fca/single/1997/1997fca0297::chunk_25,federal_court_of_australia:fca/single/1997/1997fca0297,25,Oraka Pty Ltd & Anor v Leda Holdings Pty Ltd [1997] FCA 297,https://www.judgments.fedcourt.gov.au/judgments/Judgments/fca/single/1997/1997fca0297,commonwealth,"No representation, promise, warranty or undertaking (including, without limitation, representations as to the suitability of the Premises for any particular purpose or the profitability of any business conducted or to be conducted from the Premises) has been made to me/us by any person or entity in connection with the Premises or the Lease except those set out above or those confirmed below:
+...""
+Following paragraph F, there was a space in which Mr Johnson filled in in handwriting his exclusivity requirements and certain matters related to the construction of the shop. Immediately below the space, the form continued as follows:
+""(Important Note: The Lessor and its agents and representatives shall not be responsible in any way for any loss, cost or damage resulting or arising from any alleged breach of promise or any suggested misrepresentation by the Lessor or its agent or representative unless the promise or representation upon which you wish to rely is incorporated in this Application to Lease. If you wish to rely upon a particular promise or any representation which is not already recorded in the Application to Lease it is essential that it be recorded in (F) above).""
+The agreement for lease, although executed by Oraka, and by Mr Johnson as guarantor, on 3 November 1993, was apparently not executed by Leda until some time later, and it is dated 11 February 1994. Apart from a formal guarantee by Mr Johnson, notable among its provisions is clause 9.1, as follows:
+""9.1 The Tenant represents and warrants [emphasis added] that:
+(a) the Tenant was not induced to enter into this deed by and has not relied on any statements, representations or warranties whether orally [sic] or in writing or contained in any brochure including, without limitation, statements, representations or warranties about the fitness or suitability for any purpose of the Premises or about any financial return or income to be derived from the Premises; and
+(b) in entering into this deed the Tenant has relied entirely on enquiries relating to and inspection of the Premises made by or on behalf of the Tenant; and
+(c) the Tenant has obtained independent legal advice on and is satisfied about the Tenant's obligations and rights under this deed; and
+(d) the Tenant has obtained independent expert advice on and is satisfied about the nature of the Premises and the purposes for which the Premises may be lawfully used.
+9.2 The Tenant acknowledges that the Landlord has entered into this deed on the basis that the representations and warranties contained in clause 9.1 are true and not misleading.
+9.3 The Tenant indemnifies the Landlord against any liability or loss arising from, and any costs, charges and expenses incurred in connection with any breach of the representations and warranties contained in clause 9.1 including, without limitation, legal expenses on a full indemnity basis or solicitor and own client basis whichever is the higher.
+9.4 References to this deed set out in this clause include the Lease.""
+The lease, also executed by Oraka on 3 November 1993, and apparently by Leda at some later date, provided for a term of five years from 30 November 1993.",
+Q002,What are a tenant's rights when a landlord does not make repairs?,tenancy,federal_court_of_australia:fca/single/1997/1997fca0297::chunk_26,federal_court_of_australia:fca/single/1997/1997fca0297,26,Oraka Pty Ltd & Anor v Leda Holdings Pty Ltd [1997] FCA 297,https://www.judgments.fedcourt.gov.au/judgments/Judgments/fca/single/1997/1997fca0297,commonwealth,"If you wish to rely upon a particular promise or any representation which is not already recorded in the Application to Lease it is essential that it be recorded in (F) above).""
+The agreement for lease, although executed by Oraka, and by Mr Johnson as guarantor, on 3 November 1993, was apparently not executed by Leda until some time later, and it is dated 11 February 1994. Apart from a formal guarantee by Mr Johnson, notable among its provisions is clause 9.1, as follows:
+""9.1 The Tenant represents and warrants [emphasis added] that:
+(a) the Tenant was not induced to enter into this deed by and has not relied on any statements, representations or warranties whether orally [sic] or in writing or contained in any brochure including, without limitation, statements, representations or warranties about the fitness or suitability for any purpose of the Premises or about any financial return or income to be derived from the Premises; and
+(b) in entering into this deed the Tenant has relied entirely on enquiries relating to and inspection of the Premises made by or on behalf of the Tenant; and
+(c) the Tenant has obtained independent legal advice on and is satisfied about the Tenant's obligations and rights under this deed; and
+(d) the Tenant has obtained independent expert advice on and is satisfied about the nature of the Premises and the purposes for which the Premises may be lawfully used.
+9.2 The Tenant acknowledges that the Landlord has entered into this deed on the basis that the representations and warranties contained in clause 9.1 are true and not misleading.
+9.3 The Tenant indemnifies the Landlord against any liability or loss arising from, and any costs, charges and expenses incurred in connection with any breach of the representations and warranties contained in clause 9.1 including, without limitation, legal expenses on a full indemnity basis or solicitor and own client basis whichever is the higher.
+9.4 References to this deed set out in this clause include the Lease.""
+The lease, also executed by Oraka on 3 November 1993, and apparently by Leda at some later date, provided for a term of five years from 30 November 1993. The lessor was Leda and the lessee Oraka.",
+Q002,What are a tenant's rights when a landlord does not make repairs?,tenancy,federal_court_of_australia:fca/single/1997/1997fca0297::chunk_27,federal_court_of_australia:fca/single/1997/1997fca0297,27,Oraka Pty Ltd & Anor v Leda Holdings Pty Ltd [1997] FCA 297,https://www.judgments.fedcourt.gov.au/judgments/Judgments/fca/single/1997/1997fca0297,commonwealth,"Apart from a formal guarantee by Mr Johnson, notable among its provisions is clause 9.1, as follows:
+""9.1 The Tenant represents and warrants [emphasis added] that:
+(a) the Tenant was not induced to enter into this deed by and has not relied on any statements, representations or warranties whether orally [sic] or in writing or contained in any brochure including, without limitation, statements, representations or warranties about the fitness or suitability for any purpose of the Premises or about any financial return or income to be derived from the Premises; and
+(b) in entering into this deed the Tenant has relied entirely on enquiries relating to and inspection of the Premises made by or on behalf of the Tenant; and
+(c) the Tenant has obtained independent legal advice on and is satisfied about the Tenant's obligations and rights under this deed; and
+(d) the Tenant has obtained independent expert advice on and is satisfied about the nature of the Premises and the purposes for which the Premises may be lawfully used.
+9.2 The Tenant acknowledges that the Landlord has entered into this deed on the basis that the representations and warranties contained in clause 9.1 are true and not misleading.
+9.3 The Tenant indemnifies the Landlord against any liability or loss arising from, and any costs, charges and expenses incurred in connection with any breach of the representations and warranties contained in clause 9.1 including, without limitation, legal expenses on a full indemnity basis or solicitor and own client basis whichever is the higher.
+9.4 References to this deed set out in this clause include the Lease.""
+The lease, also executed by Oraka on 3 November 1993, and apparently by Leda at some later date, provided for a term of five years from 30 November 1993. The lessor was Leda and the lessee Oraka. Rent in the sum of $21,450.00 per annum was covenanted to be paid by monthly instalments, in addition to which it was stipulated that there should be annual reviews of the amount of the rent and payment of contributions to outgoings and also of what was described as a ""marketing levy"" equal to five per cent of the rent.",
+Q002,What are a tenant's rights when a landlord does not make repairs?,tenancy,high_court_of_australia:/showbyHandle/1/9163::chunk_27,high_court_of_australia:/showbyHandle/1/9163,27,Tropical Traders Ltd v Goonan [1964] HCA 20,https://eresources.hcourt.gov.au/showbyHandle/1/9163,commonwealth,"It was as follows: ""The Court may on motion relieve against a forfeiture of any lease or of any right to purchase (where the purchaser is in possession) for the breach of any covenant, condition, or agreement, if the Court is of opinion that such breach has been committed through accident or mistake, without fraud or gross negligence, and that no injury has happened to the landlord or vendor other than can be compensated in damages, and may in granting such relief order the person relieved to pay such damages and costs as to the Court may seem meet"". It will be noticed that this was a general provision appearing in a section not designed primarily or merely to regulate the rights of lessors and lessees yet, nevertheless, it seems to have influenced the view taken concerning the operation of sub-s. (6) of s. 94 of The Property Law Act. (See Hargreaves v. Dukes [4] .) However, I think there is much to be said on general principles for the proposition that sub-s. (6) of that section and of s. 3 of the Landlord and Tenant Act, 1912 W.A. appear as provisions designed to extend the protection initially given to lessees by the leading provisions of the section. That this is the true effect of the section may be thought to emerge from a close consideration of the language of that sub-section. What the section in general purports to do is to restrain the unconditional exercise by lessors of certain rights. Sub-section (1) provides that those rights of a lessor ""shall not be enforceable by action or otherwise"" unless and until the lessor has served upon the lessee a notice of the character specified ""and the lessee fails within a reasonable time thereafter to remedy the breach, if it is capable of remedy, and to make reasonable compensation therefor in money to the satisfaction of the lessor"".",
+Q002,What are a tenant's rights when a landlord does not make repairs?,tenancy,nsw_caselaw:549ffe193004262463c81dc9::chunk_7,nsw_caselaw:549ffe193004262463c81dc9,7,VI.SA. Australia Pty Limited v Tzaneros Investments Pty Limited [2009] NSWSC 531,https://www.caselaw.nsw.gov.au/decision/549ffe193004262463c81dc9,new_south_wales,"On this basis, our client does not accept that your client is anxious to comply with its obligations with its obligations with respect to repair and make good and believes that your client's conduct in this regard to date has been to the contrary. Insofar as the bank guarantee held by our client, should your client fail to pay the rent demanded and comply with its obligations to repair and make good by Friday 29 May 2009 our client reserves its rights to call upon the bank guarantee without further notice to your client and exercise its rights in accordance with the terms and conditions of the Leases.""
+9 The defendant maintained that that document answered the requirements of a demand in cl 20.2 of the sub-leases.
+10 In the paragraph that preceded that quoted, however, it was alleged that the plaintiff remained in possession of the premises and in accordance with cl 2.3 of the sub-leases they had reverted to monthly tenancies.
+""Consequently, you ( sic ) client is obliged to continue to pay rent and any other money payable until possession is given to our client, the appropriate written notice is served ending the monthly tenancy and your client having satisfied all their obligations, including but not limited to the repair and make good provisions of the Leases. We enclose a copy of our client's Tax Invoices dated 12 May 2009, which we note are due and payable on 15 May 2009.""
+11 In my view there is a serious question to be determined as to whether or not the letter of 14 May 2009 constitutes a demand for the purposes of cl 20.2 of the sub-leases. It is a letter that adopts two inconsistent positions. If there was a holding over and if there was a lease as a result, the obligation to make good did not arise. If the obligation to make good arose there could be no continuing lease because cl 16.1 was concerned with the termination of a lease.
+12 The entitlements with respect to an unconditional performance guarantee were discussed in Clough Engineering Limited v Oil and Natural Gas Corporation Limited [2008] FCAFC 136; (2008) 249 ALR 458.",
+Q002,What are a tenant's rights when a landlord does not make repairs?,tenancy,nsw_legislation:2024-05-31/act-1999-081::chunk_268,nsw_legislation:2024-05-31/act-1999-081,268,Retirement Villages Act 1999 (NSW),https://legislation.nsw.gov.au/view/whole/html/inforce/2024-05-31/act-1999-081,new_south_wales,"(3) In particular, the premises must be left as nearly as possible in the same condition (fair wear and tear excepted) as set out in the condition report. (4) Subsection (3) does not apply in respect of premises the subject of a residence contract entered into before the commencement of section 38 unless a condition report relating to the premises was given to the resident in connection with the contract. (5) The operator of the village may require a former occupant to bear the cost of any repairs to the former occupant's residential premises that are necessary because the former occupant did not leave the premises in the condition required by this section. (6) However, a former occupant—
+(a) who disagrees with a claim by the operator of the retirement village that such repairs are necessary because the premises were not left in the condition required by this section, or
+(b) who is of the opinion that the cost of the repairs, as claimed by the operator, is excessive,
+may apply to the Tribunal for an order in relation to the claim. (7) In any proceedings before the Tribunal under this section—
+(a) the operator bears the onus of substantiating his or her claim, and
+(b) the Tribunal may—
+(i) if it considers that the operator has not substantiated his or her claim—order the operator to withdraw the claim, or
+(ii) if it considers that the operator has substantiated his or her claim, wholly or in part—order the former occupant to pay such amount to the operator as it considers necessary to defray the cost of the repairs.
+
+164 No refurbishment required under contracts entered into after commencement of section
+A former occupant of residential premises in a retirement village who entered into his or her residence contract in respect of those premises on or after the commencement of this section is not liable to refurbish (or pay for the cost of the refurbishment of) the premises.
+
+165 Refurbishment under contract in force before commencement of section
+(1) If a former occupant whose contract was in force before the commencement of this section is required under the contract to pay for the cost of refurbishment of the residential premises concerned on permanently vacating those premises, the operator of the retirement village—
+(a) must, before commencing the refurbishment, supply the former occupant with a work schedule for the refurbishment together with at least 3 quotations of costs for carrying out the refurbishment, and
+(b) must negotiate with the former occupant and attempt to come to an agreement as to which quotation should be accepted, and
+(c) if agreement cannot be reached, must allow the former occupant to obtain other quotations in an attempt to find a quotation that is acceptable to both the operator and the former occupant, and
+(d) must ensure that the former occupant receives a fully-itemised account for the carrying out of the refurbishment, and
+(e) must not accept or demand any payment for the carrying out of the refurbishment until the refurbishment is complete.",
+Q002,What are a tenant's rights when a landlord does not make repairs?,tenancy,tasmanian_legislation:2012-05-30/act-1935-042::chunk_25,tasmanian_legislation:2012-05-30/act-1935-042,25,Landlord and Tenant Act 1935 (Tas),https://www.legislation.tas.gov.au/view/whole/html/inforce/current/act-1935-042,tasmania,"Right of tenant to remove buildings and fixtures erected by him with landlord's consent
+(1) If any tenant of a farm or lands at his own cost and expense erects, with the consent in writing of the landlord for the time being, any farm-building, either detached or otherwise, or puts up any other building, engine, or machinery, either for agricultural purposes or for the purposes of trade and agriculture (which are not erected or put up in pursuance of some covenant or obligation in that behalf), then all such buildings, engines, and machinery shall be the property of the tenant and shall be removable by him, notwithstanding the same may consist of separate buildings, or that the same or any part thereof may be built in or permanently fixed to the soil, so as the tenant making any such removal do not in anywise injure the land or buildings belonging to the landlord, or otherwise put the same in like plight and condition, or in as good plight and condition as the same were in before the erection of anything so removed. (2) No tenant shall, under the provisions of this section, be entitled to remove any such matter or thing as aforesaid without first giving to the landlord or his agent one month's previous notice in writing of his intentions so to do; and thereupon it shall be lawful for the landlord, or his agent on his authority, to elect to purchase the matters and things so proposed to be removed or any of them; and the right to remove the same shall thereby cease, and the same shall belong to the landlord; and the value thereof shall be ascertained and determined by 2 referees, one to be chosen by each party, or by an umpire to be named by such referees, and shall be paid or allowed in account by the landlord who has so elected to purchase the same. PART V - Distress for Rent
+
+Division 1 - General provisions
+
+27.",
+Q002,What are a tenant's rights when a landlord does not make repairs?,tenancy,tasmanian_legislation:2012-05-30/act-1935-042::chunk_58,tasmanian_legislation:2012-05-30/act-1935-042,58,Landlord and Tenant Act 1935 (Tas),https://www.legislation.tas.gov.au/view/whole/html/inforce/current/act-1935-042,tasmania,"Penalties for certain irregularities, omissions, &c. No person shall –
+(a) wilfully neglect to make out, sign, and deliver –
+(i) the prescribed inventory;
+(ii) a bill of charges claimed; or
+(iii) any prescribed notice –
+as required by this Act in respect of any goods or chattels distrained by him;
+(b) being an agent or bailiff make any distress without obtaining a warrant as required by this Act or wilfully neglect to deliver, as required by this Act, a copy of such warrant; or
+(c) retain, take, or receive any other or greater charge than is prescribed by Schedule 4 . Penalty: Fine not exceeding 20 penalty units.
+
+59. Forms to be used
+Every precept to replevy, replevin bond, and assignment of such bond, respectively shall be in the appropriate form in Schedule 3 . Division 2 - Provisions as to lodgers and under-tenants
+
+60. Interpretation
+In this Division –
+superior landlord includes a landlord in cases where the goods seized are not those of an under-tenant or lodger;
+tenant and under-tenant do not include a lodger.
+
+61. Right of under-tenant or lodger, if distress levied, to make declaration that immediate tenant has no property in goods distrained, and to undertake to pay rent due to superior landlord
+(1) If any superior landlord levies or authorizes to be levied, a distress on any goods or chattels of –
+(a) any under-tenant;
+(b) any lodger; or
+(c) any other person not being a tenant of the premises or of any part thereof, and not having any beneficial interest in any tenancy of the premises or of any part thereof –
+for arrears of rent due to the superior landlord by his immediate tenant, the under-tenant, lodger, or other person aforesaid may serve the superior landlord, or the agent employed by him to levy such distress, with a statutory declaration made by the under-tenant, lodger, or other person aforesaid in accordance with the provisions of this section.",
+Q002,What are a tenant's rights when a landlord does not make repairs?,tenancy,tasmanian_legislation:2012-05-30/act-1935-042::chunk_59,tasmanian_legislation:2012-05-30/act-1935-042,59,Landlord and Tenant Act 1935 (Tas),https://www.legislation.tas.gov.au/view/whole/html/inforce/current/act-1935-042,tasmania,"Interpretation
+In this Division –
+superior landlord includes a landlord in cases where the goods seized are not those of an under-tenant or lodger;
+tenant and under-tenant do not include a lodger.
+
+61. Right of under-tenant or lodger, if distress levied, to make declaration that immediate tenant has no property in goods distrained, and to undertake to pay rent due to superior landlord
+(1) If any superior landlord levies or authorizes to be levied, a distress on any goods or chattels of –
+(a) any under-tenant;
+(b) any lodger; or
+(c) any other person not being a tenant of the premises or of any part thereof, and not having any beneficial interest in any tenancy of the premises or of any part thereof –
+for arrears of rent due to the superior landlord by his immediate tenant, the under-tenant, lodger, or other person aforesaid may serve the superior landlord, or the agent employed by him to levy such distress, with a statutory declaration made by the under-tenant, lodger, or other person aforesaid in accordance with the provisions of this section. (2) Such declaration shall set forth –
+(a) that the immediate tenant has no right of property or beneficial interest in the goods or chattels so distrained or threatened to be distrained, and that such goods or chattels are the property, or in the lawful possession, of the declarant; and
+(b) in the case of an under-tenant or lodger, the amount of rent, if any, then due to his immediate landlord, and the times at which future instalments of rent will become due, and the amount thereof, and shall contain an undertaking to pay to the superior landlord any rent so due or to become due to his immediate landlord, until the arrears of rent in respect of which the distress was levied or authorized to be levied have been paid off –
+and there shall be annexed to and verified by such declaration a correct inventory, subscribed by the declarant, of the goods and chattels referred to in the declaration.
+
+62.",
+Q002,What are a tenant's rights when a landlord does not make repairs?,tenancy,tasmanian_legislation:2012-05-30/act-1935-042::chunk_70,tasmanian_legislation:2012-05-30/act-1935-042,70,Landlord and Tenant Act 1935 (Tas),https://www.legislation.tas.gov.au/view/whole/html/inforce/current/act-1935-042,tasmania,"Interpretation
+In this Part –
+agent means any person usually employed by the landlord in the letting of the premises or in the collection of the rents thereof, or specially authorized in writing by the landlord to act in the particular matter;
+landlord means the person entitled to the immediate reversion of the premises, or, if the premises be held in joint-tenancy, co-parcenary, or tenancy-in-common, shall mean any one of the persons entitled to such reversion;
+premises means lands, houses, or other corporeal hereditaments;
+tenant includes any person in possession of the premises or any part thereof, after the termination of the tenancy without the authority of the landlord.
+
+68. Tenant in certain cases holding over may be summoned before magistrate or justices
+(1) If the term or interest of the tenant of any premises held by him at will or for any term not exceeding 7 years, either without being liable to the payment of any rent or at a rent not exceeding the rate of $520 a year, and upon which no fine shall have been reserved or made payable, shall have ended or shall have been duly determined by a legal notice to quit or otherwise, and such tenant shall neglect or refuse to quit and deliver up possession of the premises, or any part thereof, the landlord or his agent may proceed by complaint under the Justices Act 1959 , against the tenant for the recovery of possession of such premises.
+(2) If such premises were held by the tenant at a rental exceeding a rate of $80 a year such complaint shall be heard and determined by a magistrate.
+
+69. Power of court to make order for possession, and for rent or mesne profits enforceable by distress
+(1) Upon the hearing of any such complaint as aforesaid, it shall be lawful for the court, upon proof of the tenant still neglecting or refusing to deliver up possession of the premises, and of the rent payable in respect of the premises, and of the holding, and of the expiration or other determination of the tenancy, with the time and manner thereof, and of the title of the landlord, if such title has accrued since the letting of the premises, and of the service of the summons if the tenant shall not appear thereto, to order that possession of such premises shall be given by the tenant to the landlord or his agent on or before such day as the court shall name, not being more than 28 days nor less than 48 hours after the hearing of the complaint.",
+Q003,How does negligence work in Australian tort law?,tort,federal_court_of_australia:fca/single/2021/2021fca1089::chunk_134,federal_court_of_australia:fca/single/2021/2021fca1089,134,Campbell v Northern Territory of Australia (No 3) [2021] FCA 1089,https://www.judgments.fedcourt.gov.au/judgments/Judgments/fca/single/2021/2021fca1089,commonwealth,"His alternative claim that the breach caused his false imprisonment involved some curiosity. False imprisonment is a tort in its own right and, as will be seen, its existence does not depend on there having been a breach of a relevant duty of care. The applicant did not seek to make out the tort of false imprisonment independently of the tort of negligence in respect of the continuance of his detention at Don Dale.
+228 Despite not alleging the tort of false imprisonment, counsel referred to the applicant's claim as one of ""negligent false imprisonment"". The decision in Williams v Milotin [1957] HCA 83; (1957) 97 CLR 465 at 474 suggests that false imprisonment, being a form of trespass to the person, may be caused negligently, and if so, that it is not necessary for an applicant to prove actual harm. However, if the cause of action is negligence, an applicant must prove a breach of a relevant duty of care and damage: ibid.
+229 In order to satisfy the element of damage in the present case, counsel submitted that loss of liberty can be a form of damage forming the basis for the tort of negligence. Counsel referred in this respect to Monaghan v Australian Capital Territory (No 2) [2016] ACTSC 352; (2016) 315 FLR 305 in which Mossop AsJ recognised, at [171]-[173], deprivation of liberty as being damage for the purpose of a cause of action in negligence.
+230 However, this meant that the applicant set himself the task of proving a loss of liberty as a result of the breach of duty of care he alleged.",
+Q003,How does negligence work in Australian tort law?,tort,federal_court_of_australia:fca/single/2021/2021fca1089::chunk_135,federal_court_of_australia:fca/single/2021/2021fca1089,135,Campbell v Northern Territory of Australia (No 3) [2021] FCA 1089,https://www.judgments.fedcourt.gov.au/judgments/Judgments/fca/single/2021/2021fca1089,commonwealth,"However, if the cause of action is negligence, an applicant must prove a breach of a relevant duty of care and damage: ibid.
+229 In order to satisfy the element of damage in the present case, counsel submitted that loss of liberty can be a form of damage forming the basis for the tort of negligence. Counsel referred in this respect to Monaghan v Australian Capital Territory (No 2) [2016] ACTSC 352; (2016) 315 FLR 305 in which Mossop AsJ recognised, at [171]-[173], deprivation of liberty as being damage for the purpose of a cause of action in negligence.
+230 However, this meant that the applicant set himself the task of proving a loss of liberty as a result of the breach of duty of care he alleged. Self-evidently, this was a difficult task. The applicant was held in detention by lawful authority. He had no liberty which could be lost, he had no entitlement, let alone liberty, to be held at ASYDC rather than at Don Dale, and he had no entitlement, let alone liberty, to be held in the place which he considered more congenial. His entitlement at best was to be held in detention in accordance with the law.
+231 However, it is not necessary to discuss further the difficulties presented by this aspect of the applicant's articulation of his claim, because, as will be seen, I am not satisfied that the applicant has established a breach of the duty of care. Duty of care: principles
+232 The applicant's submissions concerning the duty of care owed to him by the respondents and the scope of that duty were brief.",
+Q003,How does negligence work in Australian tort law?,tort,federal_court_of_australia:fca/single/2022/2022fca1038::chunk_6,federal_court_of_australia:fca/single/2022/2022fca1038,6,Poralu Marine Australia Pty Ltd v MV Dijksgracht [2022] FCA 1038,https://www.judgments.fedcourt.gov.au/judgments/Judgments/fca/single/2022/2022fca1038,commonwealth,"That liability is said to be on the basis of bailment and the tort of negligence, it not being asserted that there was any contractual nexus between Poralu and the owner. Poralu pleads that the owner of the vessel when the claim arose and when the action was commenced, being the relevant times, was Scheepvaartonderneming Dijksgracht CV, a company incorporated in The Netherlands.
+5 Scheepvaartonderneming Dijksgracht CV, Spliethoff Transport BV, another Dutch company, and Rederij Dijksgracht, a Dutch company that claims to be the owner of the vessel, all entered appearances in the in rem proceeding.
+6 Secondly, Poralu commenced an action in personam (proceeding NSD 96 of 2021) against Spliethoff Transport as the first defendant and Scheepvaartonderneming Dijksgracht CV as owner of the vessel as the second defendant, although that entity was recently substituted by Rederij Dijksgracht as the second defendant. I will refer to the relevant persons in the in rem proceeding and the defendants in the in personam proceeding as the defendants. As in the in rem proceeding, Poralu alleges causes of action in bailment and the tort of negligence against the owner. As against Spliethoff Transport, it alleges, in essence, the following:
+(1) The existence of a contract of carriage between Poralu, as ""consignee"", and Spliethoff Transport, as carrier, arising from a series of emails between 7 and 9 November 2019. (2) By a sea waybill, the carrier acknowledged receipt of the cargo in good order and condition on 11 December 2019. (3) The contract of carriage was subject to and incorporated the Australian Hague Rules, ie, the ""amended Hague Rules"" in Sch 1A to the Carriage of Goods by Sea Act 1991 (Cth) (COGSA).",
+Q003,How does negligence work in Australian tort law?,tort,nsw_caselaw:549fb1d43004262463b81aef::chunk_2,nsw_caselaw:549fb1d43004262463b81aef,2,HRYBYNYUK v. MAZUR [2004] NSWCA 374,https://www.caselaw.nsw.gov.au/decision/549fb1d43004262463b81aef,new_south_wales,"HRYBYNYUK v. MAZUR [2004] NSWCA 374
+
+Reported Decision : (2004) Aust Torts Reports 81-774
+
+New South Wales
+Court of Appeal
+
+CITATION : HRYBYNYUK v. MAZUR [2004] NSWCA 374
+HEARING DATE(S) : 13 August 2004
+JUDGMENT DATE :
+19 October 2004
+
+JUDGMENT OF : Sheller JA at 1; Beazley JA at 2; Ipp JA at 30
+DECISION : Appeal dismissed with costs
+
+CATCHWORDS : NEGLIGENCE - Duty of care - Unincorporated association. - NEGLIGENCE - Duty of care - Volunteers - A person who seeks the services of a volunteer may be liable in negligence. - NEGLIGENCE - Duty of care - Breach - Necessity for evidence - there is no breach of duty where there is no evidence that the fault in the building which resulted in the appellant falling would have been detected through a building inspection - There is no breach of duty where there is no evidence that a person with appropriate supervisory skills would have directed the appellant not to climb the roof. - UNINCORPORATED ASSOCIATION - No duty of care owed by one member of an unincorporated association to another if that is the only relationship between them - Membership of the association's committee is not sufficient to displace this principle - Any duty of care must be established on ordinary principles of negligence in the particular circumstances.
+Donoghue v. Stevenson [1932] AC 562
+Harrison v. West of Scotland Kart Club & Ors. [2000] Scots CS 284
+Hehir v. Harvie & Duffield [1949] SASR 77
+CASES CITED : Owen v. Northampton Borough Council [1992] 156 LGR 23
+Prole v. Allen [1950] 1 All ER 476
+Robertson v. Ridley & Anor. [1989] 1 WLR 872
+Rockdale Beef Pty. Limited v. Carey [2003] NSWCA 132
+Smith v. Yarnold [1969] 2 NSWR 410
+PARTIES : Ivan Hrybynyuk (Appellant)
+Bronislav Mazur (Respondent)
+FILE NUMBER(S) : CA 41096/2003
+COUNSEL : A. Morrison SC (Appellant)
+P.",
+Q003,How does negligence work in Australian tort law?,tort,nsw_caselaw:549fbcf33004262463ba1ad2::chunk_80,nsw_caselaw:549fbcf33004262463ba1ad2,80,Ohlstein bht Ohlstein & 3 Ors v E & T Lloyd trading as Otford Farm Trail Rides [2006] NSWCA 226,https://www.caselaw.nsw.gov.au/decision/549fbcf33004262463ba1ad2,new_south_wales,"Different conduct on the part of those involved in them almost always would have produced a different result. But the possibility of a different result is not the issue and does not represent the proper test for negligence. That test remains whether the plaintiff has proved that the defendant, who owed a duty of care, has not acted in accordance with reasonable care"".
+127 The need to bear this admonition in mind is particularly important in a case where an accident causes catastrophic injuries to a young child. As Thomas J observed in Kretschmar v The State of Queensland (1989) Aust Torts Reports 80-272 at 68, 892:
+""When such devastating consequences follow, there is a natural tendency to search for someone or something to blame.""
+
+The task of the court is to apply the requisite standards of objectivity and impartiality to the issue before it.
+128 In assessing whether an omission to take particular steps is to be regarded as reasonable or otherwise, the court must bear in mind that as Gleeson CJ said in Rosenberg v Percival (2001) 205 CLR 434 at 441 to 442, [16]:
+""In the way in which litigation proceeds, the conduct of the parties is seen through the prism of hindsight. A foreseeable risk has eventuated, and harm has resulted. The particular risk becomes the focus of attention. But at the time of the allegedly tortious conduct, there may have been no reason to single it out from a number of adverse contingencies, or to attach to it the significance it later assumed.",
+Q003,How does negligence work in Australian tort law?,tort,nsw_caselaw:54a636503004de94513d926a::chunk_108,nsw_caselaw:54a636503004de94513d926a,108,Council of the New South Wales Bar Association v Miller [2011] NSWADT 297,https://www.caselaw.nsw.gov.au/decision/54a636503004de94513d926a,new_south_wales,"The Tribunal, having reviewed the legislative history of the predecessor of this definition (i.e., a definition in the same terms contained in section 123 of the Legal Profession Act 1987), said at [193]:-
+After taking account of section 33 of the Interpretation Act 1987 and the above second reading speeches, the Tribunal is of the view that unsatisfactory professional conduct can, in appropriate circumstances, include negligence and that the law of the tort of negligence is particularly relevant where the question is whether the conduct of an Australian legal practitioner, in giving legal advice to a client, is unsatisfactory professional conduct.
+131The Tribunal then referred to authority, notably in the Court of Appeal's judgments in Heydon v NRMA Ltd (2000) 51 NSWLR 1, to the effect that, as the Tribunal stated at [197]:-
+The Tribunal is of the view that the standard of competence and diligence which Ms Elkins [the complainant in the case] was entitled to expect from the Barrister when he gave her advice, was that which a member of the public was entitled to expect of a reasonably competent barrister. Ms Elkins was not entitled to expect that the advice was correct, but she was entitled to expect that in giving the advice the requisite degree of competence and diligence had been exercised by him.
+132As indicated earlier, a further claim by the Bar Association was that the Respondent's conduct alleged in Ground 2 involved 'a substantial or consistent failure to reach or maintain a reasonable standard of competence and diligence' and therefore amounted to professional misconduct under section 497(1)(a) of the LP Act. In this connection, Ms Williams argued that the Respondent's failure to reach the required standard was 'substantial' because of the obvious importance of correct advice on stamp duty being given to the Client and because the manifest deficiencies of his handling of the matter.",
+Q003,How does negligence work in Australian tort law?,tort,nsw_caselaw:54a63cd63004de94513db88d::chunk_14,nsw_caselaw:54a63cd63004de94513db88d,14,Tanious v Dedousis [2014] NSWSC 51,https://www.caselaw.nsw.gov.au/decision/54a63cd63004de94513db88d,new_south_wales,"After a careful reading of the plaintiff's ASC I have to say that I found the pleadings to be confusing. The amended statement of claim
+39The relief sought in the ASC is:
+""1 - Opening criminal investigation under criminal negligence against defendants all.
+2 - Defendants all share in a sum lump compensation of one million Australian dollar for plaintiff, apology and paying cost of this claim"".
+40The plaintiff pleads a ""cause of action"" in negligence as follows:
+""Torts - medical professional negligence - nervous shock/defendants did not select the best interest for plaintiff and his father acting against the guardianship act 1987, the civil liability act, and the health care complaints act, details are included in the enclosed submissions and affidavit.""
+41Later in the ASC the plaintiff characterises the claim as being one of criminal negligence where he pleads:
+""1 - Defendants all are liable for criminal negligence as well as health professional negligence in dealing with plaintiff's father illness as a result of accelerated deterioration of plaintiff's father health situation started under their legal and professional responsibilities ended by plaintiff's father death later without any recovery till his death.""
+42As best I can understand it, the gravamen of the plaintiff's complaint is that he was the one who looked after his father and when he decided to take his father to Bankstown hospital he expected that his father would be returned to his care. According to the plaintiff, while his father was in Bankstown hospital Dr Dedousis prescribed his father the drug Olanzapine, which the plaintiff says was not medically approved to be given to anyone over 65 years of age.",
+Q003,How does negligence work in Australian tort law?,tort,nsw_caselaw:54a63cd63004de94513db88d::chunk_15,nsw_caselaw:54a63cd63004de94513db88d,15,Tanious v Dedousis [2014] NSWSC 51,https://www.caselaw.nsw.gov.au/decision/54a63cd63004de94513db88d,new_south_wales,"The amended statement of claim
+39The relief sought in the ASC is:
+""1 - Opening criminal investigation under criminal negligence against defendants all.
+2 - Defendants all share in a sum lump compensation of one million Australian dollar for plaintiff, apology and paying cost of this claim"".
+40The plaintiff pleads a ""cause of action"" in negligence as follows:
+""Torts - medical professional negligence - nervous shock/defendants did not select the best interest for plaintiff and his father acting against the guardianship act 1987, the civil liability act, and the health care complaints act, details are included in the enclosed submissions and affidavit.""
+41Later in the ASC the plaintiff characterises the claim as being one of criminal negligence where he pleads:
+""1 - Defendants all are liable for criminal negligence as well as health professional negligence in dealing with plaintiff's father illness as a result of accelerated deterioration of plaintiff's father health situation started under their legal and professional responsibilities ended by plaintiff's father death later without any recovery till his death.""
+42As best I can understand it, the gravamen of the plaintiff's complaint is that he was the one who looked after his father and when he decided to take his father to Bankstown hospital he expected that his father would be returned to his care. According to the plaintiff, while his father was in Bankstown hospital Dr Dedousis prescribed his father the drug Olanzapine, which the plaintiff says was not medically approved to be given to anyone over 65 years of age. At that time, the plaintiff's father was 89 years of age.",
+Q003,How does negligence work in Australian tort law?,tort,nsw_caselaw:54a63cd63004de94513db88d::chunk_21,nsw_caselaw:54a63cd63004de94513db88d,21,Tanious v Dedousis [2014] NSWSC 51,https://www.caselaw.nsw.gov.au/decision/54a63cd63004de94513db88d,new_south_wales,"(2) In determining in an exceptional case, in accordance with established principles, whether negligence that cannot be established as a necessary condition of the occurrence of harm should be accepted as establishing factual causation, the court is to consider (amongst other relevant things) whether or not and why responsibility for the harm should be imposed on the negligent party. (3) If it is relevant to the determination of factual causation to determine what the person who suffered harm would have done if the negligent person had not been negligent:
+(a) the matter is to be determined subjectively in the light of all relevant circumstances, subject to paragraph (b), and
+(b) any statement made by the person after suffering the harm about what he or she would have done is inadmissible except to the extent (if any) that the statement is against his or her interest. (4) For the purpose of determining the scope of liability, the court is to consider (amongst other relevant things) whether or not and why responsibility for the harm should be imposed on the negligent party.""
+48While it is clear that Dr Dedousis owed a duty of care to the plaintiff's father, it is my view the plaintiff has not articulated what duty of care Dr Dedousis owed him. Breach of duty
+49If I am wrong and it is arguable that the Dr Dedousis owed a duty of care to the plaintiff, I will consider whether there was a breach of duty of care. The defendants submitted that the plaintiff has not pleaded sufficient material facts to establish a breach of duty of care owed to him.
+50So far as the first defendant is concerned the plaintiff's complaints include:
+* Preventing the plaintiff's father returning to his care;
+* Holding a ""wrong"" belief that the plaintiff did not have capacity to care his father;
+* Asking the plaintiff to undertake training on how to care for the plaintiff's father;
+* Wrongfully imprisoning the plaintiff's father in hospital for three months;
+* Providing wrong evidence to the Guardianship Tribunal;
+* Treating the plaintiff's father with anti-psychotic medication.
+51According to the defendants, if the plaintiff intended to make a claim in tort for pure mental harm arising from the death or injury of his father, the plaintiff has not pleaded or identified how any of the assertions are causally linked to his father's death or injury.",
+Q003,How does negligence work in Australian tort law?,tort,nsw_caselaw:54a63cd63004de94513db88d::chunk_24,nsw_caselaw:54a63cd63004de94513db88d,24,Tanious v Dedousis [2014] NSWSC 51,https://www.caselaw.nsw.gov.au/decision/54a63cd63004de94513db88d,new_south_wales,"There is reference made to ""wrong belief"" and ""wrong evidence"" in relation to the second defendant but this does not give rise to a breach of duty of care by the second defendant to the plaintiff. The claim for civil negligence fails.
+
+Criminal Negligence
+54As previously stated, the plaintiff alleges that all the defendants were criminally negligent in dealing with his father (ASC [1]). According to the Lexis Nexis, ""Encyclopaedic Australian Legal Dictionary"", 2013 <http://www.lexisnexis.com/au/legal/results/tocBrowseNodeClick.do?rand=0.3630659166962581&tocCSI=267785&clickedNode=TAADAASAED >, accessed 10 February 2014, criminal negligence is:
+""Negligence which goes beyond a mere matter of compensation between subjects and shows such disregard for the life and safety of others as to amount to a crime against the state and conduct deserving punishment: R v Bateman [1925] All ER Rep 45; (1925) 28 Cox CC 33. Mere lack of care such as will constitute civil liability is not enough. To prove manslaughter by criminal negligence, a very high degree of negligence is required to be established: Andrews v DPP [1937] AC 576; (1937) 26 Cr App R 34; R v D [1984] 3 NSWLR 29; (1984) 14 A Crim R 198.""
+55There is nothing in the plaintiff's pleadings that shows that any of the defendants' actions amounted to criminal negligence. The claim for criminal negligence also fails.
+
+Do the statutes create private rights?
+56So far as the Health Care Complaints Act and Guardianship Act are concerned, the second and third defendants says that while they create a cause of action for the benefit of the plaintiff's father in certain circumstances, they do not create a private action for the plaintiff.
+57In relation to the law as to whether a breach of the statutory duty gives rise to a private right was discussed in Sovar v Henry Lane Pty Limited (1967) 116 CLR 397, where Kitto J at 405 stated:
+""...The intention that such a private right shall exist is not ... conjured up by judges to give effect to their own ideas of policy and then 'imputed' to the legislature.",
+Q003,How does negligence work in Australian tort law?,tort,nsw_legislation:2021-01-22/act-1988-102::chunk_17,nsw_legislation:2021-01-22/act-1988-102,17,Motor Accidents Act 1988 (NSW),https://legislation.nsw.gov.au/view/whole/html/inforce/2021-01-22/act-1988-102,new_south_wales,"Note—
+The purpose of this section is to extend a motor vehicle's third-party insurance policy so that it will cover a trailer being towed by the vehicle or a trailer that has run out of control while being towed.
+
+3C Special provision for tow trucks
+A reference in this Act to the use or operation of a motor vehicle extends, in the case of a motor vehicle that is a tow truck, to the use or operation of an uninsured motor vehicle that is being towed or carried by the tow truck.
+
+3D Parts 4, 5 and 6 not to apply to coal miner work injury claim resulting from uninsured off-road accident
+(1) Parts 4, 5 and 6 do not apply in respect of the death of or injury to a coal miner caused by a motor accident if:
+(a) the motor accident did not arise from the use or operation of a motor vehicle on a road or road related area, and
+(b) there is no motor accident insurer on risk in respect of the motor accident, and
+(c) the death or injury gives rise to a work injury claim. (2) For the purposes of subsection (1) (b), there is no motor accident insurer on risk in respect of a motor accident if:
+(a) at the time of the motor accident the motor vehicle was not subject to coverage under a third-party policy and was not subject to coverage under a policy of compulsory third-party personal injury insurance or a compulsory motor vehicle accident compensation scheme under the law of a place other than New South Wales or under a law of the Commonwealth, and
+(b) there is no right of action against the Nominal Defendant in respect of the motor accident. (3) For the purposes of subsection (1) (c), death or injury gives rise to a work injury claim if it is:
+(a) a death of a worker resulting from or caused by an injury to the worker (being an injury caused by the negligence or other tort of the worker's employer), or
+(b) an injury to a worker caused by the negligence or other tort of the worker's employer.",
+Q003,How does negligence work in Australian tort law?,tort,nsw_legislation:2021-01-22/act-1988-102::chunk_18,nsw_legislation:2021-01-22/act-1988-102,18,Motor Accidents Act 1988 (NSW),https://legislation.nsw.gov.au/view/whole/html/inforce/2021-01-22/act-1988-102,new_south_wales,"(2) For the purposes of subsection (1) (b), there is no motor accident insurer on risk in respect of a motor accident if:
+(a) at the time of the motor accident the motor vehicle was not subject to coverage under a third-party policy and was not subject to coverage under a policy of compulsory third-party personal injury insurance or a compulsory motor vehicle accident compensation scheme under the law of a place other than New South Wales or under a law of the Commonwealth, and
+(b) there is no right of action against the Nominal Defendant in respect of the motor accident. (3) For the purposes of subsection (1) (c), death or injury gives rise to a work injury claim if it is:
+(a) a death of a worker resulting from or caused by an injury to the worker (being an injury caused by the negligence or other tort of the worker's employer), or
+(b) an injury to a worker caused by the negligence or other tort of the worker's employer. (4) Expressions used in subsection (3) (a) and (b) have the same meanings as they have in Part 5 of the Workers Compensation Act 1987. (5) In this section:
+coal miner has the same meaning as in clause 3 of Part 18 of Schedule 6 to the Workers Compensation Act 1987.
+
+4 Act to bind Crown
+This Act binds the Crown, not only in right of New South Wales but also, so far as the legislative power of Parliament permits, the Crown in all its other capacities.
+
+Part 2 Restoration of common law rights
+
+5 Repeal of the Transport Accidents Compensation Act 1987 No 101
+The Transport Accidents Compensation Act 1987 is repealed.
+
+6 Restoration of common law rights
+The law relating to a right to or a claim for damages or compensation or any other benefit (pecuniary or non-pecuniary) against any person for or in respect of the death of or bodily injury to a person caused by or arising out of a transport accident (within the meaning of the Transport Accidents Compensation Act 1987) occurring on or after 1 July 1987 shall be as if the Transport Accidents Compensation Act 1987 had not been passed and the common law and the enacted law (except that Act) shall have effect accordingly.
+
+7 Application of Part 6 (Awarding of damages) from 1 July 1987
+On the commencement of this Part, Part 6 shall be taken to have applied, during the period from and including 1 July 1987 to that commencement, to a transport accident within the meaning of the Transport Accidents Compensation Act 1987 occurring on or after 1 July 1987.",
