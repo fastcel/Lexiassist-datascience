@@ -1,316 +1,146 @@
-# LexiAssist Data Science Phase 1
+# LexiAssist — Australian Legal Research RAG (Data Science Course Project)
 
-### Australian Legal Corpus: Data Acquisition, Cleaning, EDA and Preprocessing
+**Status:** Phase 1 and Phase 2 completed; experimental evaluation performed on a sampled corpus.  
+**Website:** Local Flask application (`website/server.py`); no public deployment URL.  
+**Disclaimer:** For educational research only. Retrieved materials and generated explanations may be incomplete, outdated or inaccurate; not legal advice.
 
-LexiAssist is an AI-powered legal research assistant designed to support research using Australian legal documents.
+## 1. Problem and approach
 
-The broader project explores **Retrieval-Augmented Generation (RAG)** to retrieve relevant legal information and produce responses supported by source documents.
+Australian law is spread across Commonwealth, state and territory sources. LexiAssist helps users search legal text and inspect source-backed answers while retaining the ability to view original excerpts. It is a **retrieval-augmented generation (RAG)** project, not a model-training project. The user-facing demo runs locally.
 
-This repository contains **Phase 1 of the Data Science project**, focusing on preparing and understanding the Australian legal corpus before developing the retrieval pipeline.
+The system contains two retrieval pipelines:
 
-## 1. Project Objectives
-
-The objectives of Phase 1 are to:
-
-- Acquire a reproducible sample of Australian legal documents.
-- Investigate dataset structure and data quality.
-- Clean and standardize legal text and metadata.
-- Perform exploratory data analysis with visualizations.
-- Identify corpus imbalances, missing values and document-length patterns.
-- Prepare retrieval-ready text and metadata.
-- Export validated datasets for subsequent project phases.
-
-## 2. Dataset
-
-### Problem Statement
-
-Australian legal documents can be lengthy and difficult to navigate. LexiAssist aims to support legal research by retrieving relevant information from Australian legal sources using a Retrieval-Augmented Generation approach.
-
-Phase 1 focuses on preparing a clean, structured, and well-understood legal corpus for subsequent retrieval experiments.
-
-### Dataset Features and Target Variable
-
-The original dataset contains 10 attributes:
-
-`version_id`, `type`, `jurisdiction`, `source`, `mime`, `date`, `citation`, `url`, `when_scraped`, and `text`.
-
-After cleaning and preprocessing, the final dataset contains 16 attributes, including document-length statistics, missing-date indicators, publication year, and retrieval-ready text.
-
-**Target variable:** Not applicable in Phase 1. This project focuses on information retrieval rather than supervised classification or regression. No labeled prediction target is defined at this stage.
-
-**Normalization and scaling:** Numerical feature scaling is not required for the current text-preparation workflow. Embedding normalization and other retrieval-specific processing will be considered during Phase 2.
-
-
-### Dataset Source and Sampling
-
-**Dataset:** [Open Australian Legal Corpus](https://huggingface.co/datasets/isaacus/open-australian-legal-corpus)
-
-A reproducible sample of 1,000 Australian legal
-documents was collected using streaming acquisition.
-
-| Property | Value |
+| Pipeline | Retrieval and reranking |
 |---|---|
-| Dataset source | Hugging Face |
-| Sample size | 1,000 documents |
-| Random seed | 42 |
-| Shuffle buffer | 20,000 |
-| Original features | 10 |
-| Cleaned features | 14 |
-| Preprocessed features | 16 |
+| Lightweight | TF-IDF + BM25, reciprocal rank fusion (RRF), optional rule-based legal query expansion, BM25 reranking and deduplication |
+| Pretrained | `all-MiniLM-L6-v2` embeddings with FAISS, BM25, RRF, optional query expansion, `cross-encoder/ms-marco-MiniLM-L-6-v2` reranking and deduplication |
 
-The sample includes court decisions, primary
-legislation, secondary legislation and bills.
+The shared preprocessing layer uses **sentence-aware chunks with a 250-word target and two-sentence overlap**; the sampled dataset of **1,000 documents** produces **38,223 chunks**. The Flask website presents source excerpts or, when Ollama is available, locally generated answers from **Llama 3**. Prompt instructions and source citation format are in `phase2/shared/generator.py`; query rewriting is in `phase2/shared/query_expander.py`.
 
-The sample does not represent complete coverage
-of Australian law.
+**Deployed website vs research configurations:** The current website uses each pipeline's normal retrieval path **without expansion** (`sub_queries=[]`). The best *experimental* pretrained setting, **RRF 30 + expansion ON**, was evaluated in a separate frozen research script; this research selection has **not** been automatically applied to the website. The source-excerpts mode works without Ollama; LLM answering and text simplification require Ollama and `llama3`.
 
-## 3. Repository Structure
+## 2. Dataset and Phase 1
+
+Data: [Open Australian Legal Corpus](https://huggingface.co/datasets/isaacus/open-australian-legal-corpus). Phase 1 samples **1,000 documents** (seed 42), audits document types/jurisdictions and missing metadata, conservatively cleans text and produces retrieval-ready CSV records. The sample is **not comprehensive or guaranteed current** Australian law.
+
+Phase 1 notebooks with saved outputs:
+
+- [`01_data_acquisition_and_initial_audit.ipynb`](notebooks/01_data_acquisition_and_initial_audit.ipynb)
+- [`02_data_cleaning.ipynb`](notebooks/02_data_cleaning.ipynb)
+- [`03_exploratory_data_analysis.ipynb`](notebooks/03_exploratory_data_analysis.ipynb)
+- [`04_text_preprocessing.ipynb`](notebooks/04_text_preprocessing.ipynb)
+
+Complete dataset downloads are in the [Phase 1 GitHub Release](https://github.com/fastcel/Lexiassist-datascience/releases/tag/v1.0-phase1), including `australian_legal_corpus_preprocessed.csv`. `data/australian_legal_corpus_readable.xlsx` is only an inspection preview, not the complete text dataset. The complete CSV is intentionally excluded from Git because of its size. See the `.gitignore` file.
+
+## 3. Phase 2 experiments and results
+
+The retrieval study compares lexical, semantic and fused/reranked configurations using **Hit@5, Precision@5, MRR@5, nDCG@5 and retrieval latency**. A 100-question *source-linked* benchmark was assembled as 40 development and 60 held-out test questions; the development questions were used to tune configurations **before** testing. Source-link and relevance assessments are **model-based/provisional**, **not independent human or legal-expert verification**. The judged passage pool is not an exhaustive sample of all relevant passages in the 38,223-chunk corpus. The numbers below describe an exploratory course study, not established legal accuracy.
+
+### Locked final 60-question test
+
+| Metric | TF-IDF lightweight | Pretrained RRF 30 + expansion ON |
+|---|---:|---:|
+| Hit@5 | 0.9333 | **0.9500** |
+| Precision@5 | 0.4333 | **0.4933** |
+| MRR@5 | 0.7050 | **0.7908** |
+| nDCG@5 | 0.6564 | **0.7502** |
+| Mean retrieval latency | **390.14 ms** | 1,597.90 ms |
+
+**Interpretation:** The preselected pretrained pipeline ranks relevant evidence better on this judged test pool, but is approximately **4.1 times slower** than TF-IDF. The final configuration was selected by development-set nDCG@5, not by inspecting test results. Earlier 20-question, query-expansion ON/OFF, and 40-question tuning comparisons are included in the evaluation results folders.
+
+### Generated answer quality (10-question pilot)
+
+Comparing locally generated Llama 3 answers to the five retrieved passages for each question gave provisional mean scores: **answer relevance 1.20/2**, **factual support 0.90/2**, **citation support 0.70/2**, **jurisdiction correctness 0.70/1**. Common problems include incomplete responses, unsupported generalizations, and incorrect citation markers. These passage-based ratings do **not** establish whether every legal claim reflects current law. See `phase2/evaluation/results/answer_faithfulness/answers_scored_provisional.csv` and [`notebooks/05_phase2_experiments.ipynb`](notebooks/05_phase2_experiments.ipynb).
+
+### Reproducible outputs and visualizations
+
+- [`notebooks/05_phase2_experiments.ipynb`](notebooks/05_phase2_experiments.ipynb) — Phase 2 result tables and **saved plot outputs**.
+- [`docs/figures/`](docs/figures/) — static plots of held-out scores, runtime and answer-quality screening.
+- [`phase2/evaluation/results/option_b_dev_combined_40/`](phase2/evaluation/results/option_b_dev_combined_40/) — development scores for 19 configurations against one candidate pool.
+- [`phase2/evaluation/results/option_b_test_final/`](phase2/evaluation/results/option_b_test_final/) — locked held-out retrieval outputs and provisional grades.
+- [`phase2/evaluation/results/query_expansion/full_20/`](phase2/evaluation/results/query_expansion/full_20/) — query-expansion ablation.
+- [`phase2/evaluation/option_b/preprocessing_sensitivity.csv`](phase2/evaluation/option_b/preprocessing_sensitivity.csv) — chunk count and processing time for 27 settings; **not** a relevance test.
+- [`docs/screenshots/`](docs/screenshots/) — live interface screenshots.
+
+### Limitations
+
+- Model-based question/source and passage relevance grades are **provisional**; there was no independent expert adjudication.
+- The small, geographically unbalanced sample omits many valid legal authorities and may include outdated material.
+- Measured query latency excludes index/model loading and generated-answer time, and timings were not repeatedly sampled for uncertainty intervals.
+- Generated answers sometimes misinterpret cases, miss the legal question or provide unsupported citations.
+- The experimental best configuration and the currently deployed local website's default settings are different, as described above.
+
+## 4. Local installation and website demo
+
+> **No online deployment is required to run the project.** The website is tested locally; this repository does not claim a public live URL.
+
+1. Clone the project and use the **final submission branch** (the same version as the default branch after merging):
+
+   ```bash
+   git clone https://github.com/fastcel/Lexiassist-datascience.git
+   cd Lexiassist-datascience
+   ```
+
+2. Create a Python environment and install requirements (Python 3.10+ recommended):
+
+   ```bash
+   python -m venv .venv
+   # Windows PowerShell: .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+   # macOS/Linux: .venv/bin/python -m pip install -r requirements.txt
+   ```
+
+3. Download `australian_legal_corpus_preprocessed.csv` from the [Phase 1 release](https://github.com/fastcel/Lexiassist-datascience/releases/tag/v1.0-phase1) into `data/` (full-text CSV, not the `.xlsx` preview).
+
+4. Build reproducible indexes for the **1,000-document run**. The `--limit 1000` flag is intentional: it gives the artifact folder names expected by the existing Flask server and experiment scripts:
+
+   ```powershell
+   .\.venv\Scripts\python.exe phase2/lightweight/Indexer.py --limit 1000
+   .\.venv\Scripts\python.exe phase2/pretrained/Indexer.py --limit 1000
+   .\.venv\Scripts\python.exe phase2/test_retrieval.py --variant both
+   ```
+
+   On macOS/Linux replace `.\.venv\Scripts\python.exe` with `.venv/bin/python`.
+   The indexes are large, generated locally and ignored by Git; no manual binary upload is necessary.
+
+5. Start the web app:
+
+   ```powershell
+   .\.venv\Scripts\python.exe website/server.py
+   ```
+
+   Open **http://127.0.0.1:5000**. Select **Lightweight / Source excerpts** to demonstrate local retrieval without an LLM.
+
+6. For **LLM answer** or **Simplify legal text**, install [Ollama](https://ollama.com/download), run `ollama pull llama3` and ensure Ollama is running. Then select the LLM answer mode in the website. No paid API key is required.
+
+For more detailed UI troubleshooting, see [`website/README_WEBSITE.md`](website/README_WEBSITE.md). If inference is unavailable, the website identifies that and falls back to source excerpts.
+
+## 5. Repository structure
 
 ```text
-Lexiassist-datascience/
-    notebooks/
-        01_data_acquisition_and_initial_audit.ipynb
-        02_data_cleaning.ipynb
-        03_exploratory_data_analysis.ipynb
-        04_text_preprocessing.ipynb
-
-    data/
-        australian_legal_corpus_readable.xlsx
-
-    README.md
-    requirements.txt
+notebooks/                           Phase 1 notebooks + Phase 2 experiment notebook
+phase2/lightweight/                 TF-IDF/BM25 indexer and retriever
+phase2/pretrained/                  MiniLM/FAISS/BM25 indexer and retriever
+phase2/shared/                     Chunker, corpus adapter, prompt, query expander
+phase2/evaluation/                 Benchmarks, metrics, ablations and answer screening
+phase2/evaluation/option_b/frozen/  Fixed development/test questions and selected configs
+phase2/evaluation/results/         Measured results, model-based passage grades
+phase2/artifacts/                  Generated indexes (ignored by Git)
+website/                           Flask server and HTML frontend
+notebooks/                          Phase 1/2 notebooks with output cells
+docs/screenshots/                   Interface screenshots
+docs/figures/                       Final evaluation charts
+requirements.txt                    Dependencies for Phase 1 and 2
+requirements_phase2.txt             Compatibility installer, including root requirements
+.env.example                        Optional environment settings, no keys
+.gitignore                          Prevents committing secrets, local indexes, local dataset
 ```
 
-The `notebooks/` directory contains all four Jupyter notebooks used throughout Phase 1.
+## 6. Notes on evaluation and reproducibility
 
-The `data/` directory contains an Excel-friendly preview of the processed dataset.
+This project **does not train an LLM**. It evaluates retrieval settings and manually inspectable source excerpts. The Phase 2 scripts reproduce indexing and retrieval experiments when provided with the sampled corpus. Test results in `phase2/evaluation/results/option_b_test_final/` are preserved and should **not** be used to reselect hyperparameters. The original seven-method study, the 20-question expansion ablation, and the development-only 19-way tuning run are retained for provenance. See `phase2/evaluation/README_EVALUATION.md` for grading rules and metrics.
 
-The three complete CSV datasets are available as downloadable assets in the repository's [GitHub Release](https://github.com/fastcel/Lexiassist-datascience/releases/tag/v1.0-phase1) due to their larger file sizes.
+The provided relevance CSVs and answer-quality scores contain **provisional model-generated labels**. The CLI scorer's printed phrase “manually graded” is a generic status line and should not be interpreted as proof of independent human grading. Generated answers should always be verified against authoritative legal sources.
 
-## 4. Project Workflow
+## 7. Submission
 
-### Notebook 01: Data Acquisition and Initial Audit
-
-[View Notebook 01](notebooks/01_data_acquisition_and_initial_audit.ipynb)
-
-This notebook:
-
-- Loads the corpus from Hugging Face.
-- Uses a fixed random seed for reproducible sampling.
-- Selects 1,000 legal documents.
-- Converts the sample into a Pandas DataFrame.
-- Examines initial attributes and document distributions.
-- Saves the sampled dataset and acquisition metadata.
-
-### Notebook 02: Data Cleaning
-
-[View Notebook 02](notebooks/02_data_cleaning.ipynb)
-
-This notebook:
-
-- Investigates missing metadata.
-- Checks duplicate records, IDs, URLs and text.
-- Standardizes metadata and timestamps.
-- Normalizes legal text using conservative cleaning techniques.
-- Calculates word counts and character counts.
-- Identifies document-length outliers without automatically removing them.
-- Exports the cleaned corpus.
-
-Legal terminology, citations and document structure are preserved wherever possible.
-
-### Notebook 03: Exploratory Data Analysis
-
-[View Notebook 03](notebooks/03_exploratory_data_analysis.ipynb)
-
-Exploratory Data Analysis examines:
-
-- Legal document type distribution
-- Jurisdiction distribution
-- Data source distribution
-- Publication year patterns
-- Document length distribution
-- Missing metadata by source
-- Relationships between jurisdictions and document types
-
-The notebook includes visualizations, statistical summaries and interpretations relevant to LexiAssist.
-
-### Notebook 04: Text Preprocessing
-
-[View Notebook 04](notebooks/04_text_preprocessing.ipynb)
-
-This notebook prepares the cleaned corpus for future retrieval experiments.
-
-Key tasks include:
-
-- Validating document integrity.
-- Preserving original legal text.
-- Creating a separate `retrieval_text` attribute by combining citations and document content.
-- Preparing publication-year metadata.
-- Preserving missing-date indicators.
-- Validating and exporting the final preprocessed dataset.
-- Creating a formatted Excel preview for easier inspection.
-
-No chunking, embedding generation or retrieval model training is performed in this phase.
-
-## 5. Key EDA Findings
-
-| Metric | Finding |
-|---|---|
-| Total documents | 1,000 |
-| Court decisions | 616 (61.6%) |
-| Primary legislation | 169 (16.9%) |
-| Secondary legislation | 180 (18.0%) |
-| Bills | 35 (3.5%) |
-| NSW and Commonwealth documents | 700 (70.0%) |
-| Missing publication dates | 107 (10.7%) |
-| Publication year range | 1929 to 2024 |
-| Median document length | 3,526.5 words |
-| Maximum document length | 91,018 words |
-
-### Important Observations
-
-**Document imbalance:** Court decisions represent the majority of the sampled corpus.
-
-**Jurisdiction concentration:** New South Wales and Commonwealth documents account for 70% of the sample.
-
-**Source concentration:** NSW Caselaw and the Federal Court of Australia together contribute 56.1% of the documents.
-
-**Missing metadata:** Missing publication dates are concentrated in particular sources, especially the High Court of Australia.
-
-**Document-length variation:** Some legal documents are substantially longer than others, highlighting the need for careful chunking in future retrieval experiments.
-
-These findings describe the sampled dataset rather than the entire Australian legal system.
-
-## 6. Data Files and Downloads
-
-The project produces four datasets for different stages of analysis and preprocessing.
-
-| File | Description |
-|---|---|
-| `australian_legal_corpus_sample.csv` | Original 1,000-document sample |
-| `australian_legal_corpus_cleaned.csv` | Cleaned legal text and metadata |
-| `australian_legal_corpus_preprocessed.csv` | Retrieval-ready text and metadata |
-| `australian_legal_corpus_readable.xlsx` | Formatted preview for easy inspection |
-
-### Download Full CSV Datasets
-
-The three complete CSV datasets are hosted as assets in the GitHub Release:
-
-**[LexiAssist Phase 1 Datasets (v1.0-phase1)](https://github.com/fastcel/Lexiassist-datascience/releases/tag/v1.0-phase1)**
-
-Individual downloads:
-
-1. [Download Original Sample CSV](https://github.com/fastcel/Lexiassist-datascience/releases/download/v1.0-phase1/australian_legal_corpus_sample.csv)
-2. [Download Cleaned Corpus CSV](https://github.com/fastcel/Lexiassist-datascience/releases/download/v1.0-phase1/australian_legal_corpus_cleaned.csv)
-3. [Download Preprocessed Corpus CSV](https://github.com/fastcel/Lexiassist-datascience/releases/download/v1.0-phase1/australian_legal_corpus_preprocessed.csv)
-
-All three CSV files preserve the complete legal text.
-
-The files are provided through GitHub Releases because their sizes exceed the standard GitHub browser upload limit.
-
-### Excel Preview
-
-A formatted Excel version is also available:
-
-[Download Readable Excel Preview](data/australian_legal_corpus_readable.xlsx)
-
-The Excel workbook is intended for human inspection and contains shortened legal-text previews for easier reading.
-
-**Important:** The CSV files contain the complete legal text and should be used for further data processing and retrieval experiments. The Excel preview is not intended to replace the full datasets.
-
-## 7. Technologies and Libraries
-
-The project uses the following technologies:
-
-- Python
-- Google Colab and Jupyter Notebook
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Hugging Face Datasets
-- OpenPyXL
-- Git and GitHub
-
-Required Python dependencies are listed in `requirements.txt`.
-
-## 8. Running the Project
-
-### Environment Setup
-
-Clone or download the repository:
-
-```bash
-git clone https://github.com/fastcel/Lexiassist-datascience.git
-```
-
-Navigate to the project directory:
-
-```bash
-cd Lexiassist-datascience
-```
-
-Install the required Python libraries:
-
-```bash
-pip install -r requirements.txt
-```
-
-### Executing the Notebooks
-
-Open the notebooks in Google Colab and execute them in the following order:
-
-1. `01_data_acquisition_and_initial_audit.ipynb`
-2. `02_data_cleaning.ipynb`
-3. `03_exploratory_data_analysis.ipynb`
-4. `04_text_preprocessing.ipynb`
-
-Notebook 01 acquires and samples the source dataset. Subsequent notebooks use the CSV files exported by previous stages.
-
-Alternatively, the complete datasets can be downloaded directly from the [GitHub Release](https://github.com/fastcel/Lexiassist-datascience/releases/tag/v1.0-phase1) without rerunning data acquisition.
-
-The notebooks use Google Colab file-upload and download utilities. Some adjustments may be required when running outside Colab.
-
-## 9. Phase 1 Outcomes
-
-Phase 1 successfully establishes a reproducible workflow for acquiring, cleaning, analyzing and preparing Australian legal documents.
-
-The main outcomes include:
-
-- Acquisition of a 1,000-document sample.
-- Identification and investigation of data-quality issues.
-- Standardization of text and metadata.
-- Exploratory visualizations and statistical analysis.
-- Identification of corpus imbalances and coverage limitations.
-- Preparation of retrieval-ready text.
-- Preservation of original legal content.
-- Export of the final validated dataset containing 1,000 documents and 16 attributes.
-
-The resulting dataset provides a foundation for future retrieval experiments.
-
-The analysis also identifies data-quality considerations that will inform subsequent development.
-
-## 10. Future Work: Phase 2
-
-Planned work includes:
-
-- Context-preserving legal document chunking.
-- Sparse retrieval using BM25.
-- Dense retrieval using embeddings and FAISS.
-- Hybrid retrieval and rank fusion.
-- Retrieval-Augmented Generation.
-- Evaluation of retrieved legal information and citation quality.
-
-These components are outside the scope of the current Phase 1 implementation.
-
-## 11. Disclaimer
-
-LexiAssist is an educational research project. It is not a substitute for professional legal advice.
-
-The sampled corpus is not guaranteed to contain current or comprehensive Australian law. Legal information should be verified using authoritative sources.
-
-**Project:** LexiAssist
-
-**Component:** Data Science Phase 1
-
-**Status:** Data acquisition, cleaning, EDA and preprocessing completed.
+This course project is submitted **via GitHub**. The repository is public, making the source available without collaborator invitations. Phase 2 belongs on the default branch for easy assessment. Project screenshots and evaluation plots are provided under `docs/`.
