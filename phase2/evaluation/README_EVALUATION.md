@@ -1,4 +1,5 @@
-# LexiAssist — Phase 2 retrieval evaluation (pilot)
+# LexiAssist- Phase 2 retrieval evaluation (pilot)
+> **Final submission note:** This document describes the initial pilot evaluation workflow. The completed 100-question benchmark, final development and held-out test experiments, results, and limitations are documented in the [main README](../../README.md).
 
 This evaluation **reuses both original LexiAssist retrieval implementations** and the two index sets you already generated from the same 1,000-document Phase 1 CSV (38,223 chunks). It does **not** need Ollama or rerun indexing.
 
