@@ -2,6 +2,7 @@
 
 **Status:** Phase 1 and Phase 2 completed; experimental evaluation performed on a sampled corpus.  
 **Website:** Local Flask application (`website/server.py`); no public deployment URL.  
+**Project Report:** [Read the Final Project Report](LexiAssistFinalReport.pdf)  
 **Disclaimer:** For educational research only. Retrieved materials and generated explanations may be incomplete, outdated or inaccurate; not legal advice.
 
 ## 1. Problem and approach
