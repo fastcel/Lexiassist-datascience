@@ -1,5 +1,4 @@
 # LexiAssist- Australian Legal Research RAG (Data Science Course Project)
-> **Final submission note:** This document describes the initial pilot evaluation workflow. The completed 100-question benchmark, final development and held-out test experiments, results, and limitations are documented in the [main README](../../README.md).
 
 **Status:** Phase 1 and Phase 2 completed; experimental evaluation performed on a sampled corpus.  
 **Website:** Local Flask application (`website/server.py`); no public deployment URL.  
@@ -143,6 +142,12 @@ This project **does not train an LLM**. It evaluates retrieval settings and manu
 
 The provided relevance CSVs and answer-quality scores contain **provisional model-generated labels**. The CLI scorer's printed phrase “manually graded” is a generic status line and should not be interpreted as proof of independent human grading. Generated answers should always be verified against authoritative legal sources.
 
-## 7. Submission
+## 7. Conclusion
+
+LexiAssist demonstrates the effectiveness of different retrieval strategies for Australian legal question answering. The pretrained hybrid configuration achieved better retrieval performance than the lightweight TF-IDF baseline, although at a higher computational cost. The generated answer evaluation also revealed limitations in factual grounding and citation accuracy, highlighting the importance of reliable retrieval and source verification.
+
+Overall, the project demonstrates the trade-off between retrieval quality, computational efficiency and answer reliability in legal RAG systems. Future work could include independent human evaluation, a larger legal corpus and improved answer grounding.
+
+## 8. Submission
 
 This course project is submitted **via GitHub**. The repository is public, making the source available without collaborator invitations. Phase 2 belongs on the default branch for easy assessment. Project screenshots and evaluation plots are provided under `docs/`.
