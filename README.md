@@ -1,4 +1,5 @@
 # LexiAssist- Australian Legal Research RAG (Data Science Course Project)
+> **Final submission note:** This document describes the initial pilot evaluation workflow. The completed 100-question benchmark, final development and held-out test experiments, results, and limitations are documented in the [main README](../../README.md).
 
 **Status:** Phase 1 and Phase 2 completed; experimental evaluation performed on a sampled corpus.  
 **Website:** Local Flask application (`website/server.py`); no public deployment URL.  
